@@ -25,5 +25,11 @@ Personal Cloud infrastructure lab built on RHEL demonstrating:
 - Reverse proxy
 - Monitoring stack
 - Multiple VM nodes
-- Load balancing 
+- Load balancing
+
+  ## Development Journal
+
+  Daily development notes and troubleshooting logs can be found here:
+
+  journal/
 
