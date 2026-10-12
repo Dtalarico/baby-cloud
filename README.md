@@ -99,6 +99,15 @@ Development records should distinguish clearly between:
 
 The purpose of the repository is not merely to present a finished system. It is to document the engineering process used to create, understand, maintain, and improve it.
 
+
+## Engineering Development and Competency Demonstration
+
+Baby Cloud is both an operational infrastructure project and a record of learning to administer that infrastructure independently. Preserve the progression from requirements and design decisions through implementation, observed failures, troubleshooting, verified results, and improved procedures. A successful deployment alone is not evidence that every operation was completed without help; distinguish guided work, assisted work, and independently demonstrated work in dated engineering journal entries.
+
+The separate [RHCSA practical administration lab framework](https://github.com/Dtalarico/rhca-training/blob/main/docs/PRACTICAL_LAB_FRAMEWORK.md) develops individual Linux administration skills through controlled, progressively independent tickets. Baby Cloud provides a larger, integrated environment in which those skills can be applied to real nodes, networking, services, automation, and recovery. Cross-reference relevant learning when useful, but keep certification exercises and Baby Cloud deployment records in their respective repositories.
+
+**Portfolio standard:** demonstrate not only what was built, but how engineering competence was developed, tested, verified, and improved through actual work. Record only work that has been performed; mark proposed activities and future templates as proposed.
+
 ## Long-Term Objective
 
 Develop Baby Cloud into a functioning eight-node Linux engineering laboratory that demonstrates practical systems administration, distributed computing, useful radio-related workloads, and progressively deeper understanding of Linux architecture.
