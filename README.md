@@ -108,6 +108,16 @@ The separate [RHCSA practical administration lab framework](https://github.com/D
 
 **Portfolio standard:** demonstrate not only what was built, but how engineering competence was developed, tested, verified, and improved through actual work. Record only work that has been performed; mark proposed activities and future templates as proposed.
 
+## Instructional Continuity and Documentation Ownership
+
+**The engineer-in-training is the intended author of the engineering record.** The assistant serves as instructor, reviewer, and documentation coach—not a permanent ghostwriter. Earlier records may have been drafted by the assistant from the student's descriptions; this is a starting point for learning documentation, not evidence that the student independently authored those entries.
+
+Gradually transfer authorship: **demonstrate → co-write → student drafts with feedback → student writes and verifies independently**. For each journal entry, the student should learn to state the objective, starting state, decisions, commands/actions, authentic evidence, errors and troubleshooting, verification, and lessons learned. Record the current level of assistance honestly and do not invent outcomes.
+
+**Cross-conversation handoff:** Conversation context can be incomplete or unavailable in a new thread. The repository is the durable source of project decisions and documented evidence, not a reproduction of the assistant's private internal state. Before advising on new work, consult the current README, relevant architecture/decision documents, and latest dated journal entries; identify the last verified state, open questions, immediate next step, and any instructions about how the student is learning. Ask the student to confirm live system state rather than assuming an old record remains current. Update durable records when material decisions or progress occur, without overwriting historical evidence. Do not put secrets or sensitive personal details into the repository.
+
+The objective is not to have the assistant produce polished entries indefinitely. **It is to teach the student to independently write accurate, professional engineering documentation and maintain continuity across work sessions.**
+
 ## Long-Term Objective
 
 Develop Baby Cloud into a functioning eight-node Linux engineering laboratory that demonstrates practical systems administration, distributed computing, useful radio-related workloads, and progressively deeper understanding of Linux architecture.
