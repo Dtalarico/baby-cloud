@@ -35,7 +35,7 @@ Baby Cloud may explore all three approaches. Their roles must not be conflated, 
 - Measure actual resources and capabilities before fixing workload assignments
 - Keep the environment recoverable and document verified results
 
-#**Current status (2026-10-21):** Purchase planned; no physical nodes acquired or verified as operational in this record. The exact ARM64 Linux distribution and network switch are still under evaluation. The 2026-10-12 Pi 5 procurement listing was a documentation error, not an actual change in hardware intent.
+**Current status (2026-10-21):** Two Vilros Raspberry Pi 4 4GB starter kits and a TP-Link TL-SG116E 16-port Gigabit Easy Smart switch with five 3-foot Cat6 cables have been ordered and confirmed. No equipment has yet been verified as delivered, installed, or operational. The initial switch choice is settled for this purchase; the exact ARM64 Linux distribution and final cluster software remain under evaluation. The 2026-10-12 Pi 5 procurement listing was a documentation error, not an actual change in hardware intent. The 2026-10-12 Pi 5 procurement listing was a documentation error, not an actual change in hardware intent.
 
 ## Eight-node target
 
