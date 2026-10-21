@@ -30,7 +30,7 @@ Final node assignments, cluster software, operating systems, scheduling architec
 
 ## Current Project Status — 2026-10-21
 
-**Current implementation milestone:** Plan to acquire **two Raspberry Pi 4 nodes** first, establish a working Linux/networking foundation, then expand to four nodes and ultimately pursue the original eight-node goal. This smaller first purchase was chosen because available funding initially constrained the four-node starting plan; it does not replace the original vision. The author reports that purchasing funds are now available. **No physical node purchase, deployment, or test is recorded as complete.**
+**Current implementation milestone:** Plan to acquire **two Raspberry Pi 4 nodes** first, establish a working Linux/networking foundation, then expand to four nodes and ultimately pursue the original eight-node goal. This smaller first purchase was chosen because available funding initially constrained the four-node starting plan; it does not replace the original vision. **On 2026-10-21, the author ordered two Vilros Raspberry Pi 4 4GB Complete Starter Kits and, separately, a TP-Link TL-SG116E switch and five Cat6 cables from Amazon.** Both orders are confirmed; delivery, assembly, deployment, and testing remain pending. The two-node scope protects the author's cash reserve while funding is uncertain.
 
 See the [dated decision record](docs/decisions/2026-10-21-two-node-initial-build.md) and [current procurement checklist](docs/procurement/current-two-node-procurement.md). The earlier Pi 5 estimate was a documentation error; Raspberry Pi 4 was intended throughout.
 
