@@ -13,8 +13,8 @@ Buy all necessary items on one calendar date, if feasible, to make the first Bab
 | Item | Qty | Selection / verification required |
 |---|---:|---|
 | Raspberry Pi 4 Complete Starter Kit, 4 GB | 2 | **Vilros SKU `VR4B4GBCK008_A`**; confirm current listing, included power supply, case/cooling, and 32 GB preloaded microSD |
-| Managed Gigabit Ethernet switch | 1 | Select an actual available SKU, port count, management features, power adapter, and price; TP-Link SG2218 class was a historical *candidate*, not an approved order |
-| Cat5e/Cat6 Ethernet patch cables | At least 3 | One cable for each Pi and one for router-to-switch uplink; verify required lengths and existing usable cables before buying |
+| 16-port Gigabit Easy Smart Ethernet switch | 1 | **Selected model for purchasing review: TP-Link TL-SG116E.** Confirm exact model, seller, price, and hardware revision at Amazon checkout. Supports VLAN, QoS, port mirroring; not PoE. Earlier SG2218 was a superseded candidate, not an ordered device |
+| Cat6 Ethernet patch cables | 1 × 5-pack | **Selected product for purchasing review: Cable Matters Cat6 Snagless Ethernet Patch Cable, 3-foot, 5-pack.** Three cables needed initially (two Pis plus router uplink); two spare. Confirm the uplink route is within 3 feet before ordering |
 | Surge-protected power distribution | As needed | Verify sufficient outlets, rating, and whether an existing suitable unit is available |
 | Labels / cable organization | As needed | Confirm quantities after physical layout is planned |
 | Additional storage or adapters | Not yet approved | Do not automatically purchase Pi 5 NVMe HAT+ parts or accessories from the superseded estimate |
@@ -32,6 +32,18 @@ Buy all necessary items on one calendar date, if feasible, to make the first Bab
 **Public product page:** https://vilros.com/products/vilros-raspberry-pi-4-pre-assembled-complete-starter-kit
 
 **Shopping-page observation (2026-10-21):** The public listing displayed SKU `VR4B4GBCK008_A` and an Add to Cart price of **$158.99** when reviewed. Confirm the selected **4 GB** variant and checkout total; a page price is not a paid price. The listing still contains a contradictory microSD exclusion note, resolved for this SKU by the vendor's direct email.
+
+## Selected switch and cable references — 2026-10-21
+
+The project discussion on 2026-10-20 identified **TP-Link TL-SG116E** (16-port Gigabit Easy Smart) and **Cable Matters Cat6 3-foot 5-pack** as the immediate network purchases, replacing the older SG2218-class candidate. This is a selection for purchasing review, **not** evidence of orders. The switch offers limited web-managed functions (including VLANs and port mirroring), not the full management feature set of the Omada SG2218. Its ports do not supply power to Raspberry Pi nodes. A 16-port switch has capacity for eight Pi nodes plus a router uplink, with ports remaining for other devices.
+
+Manufacturer references: https://www.tp-link.com/us/business-networking/easy-smart-switch/tl-sg116e/v1.20/ and https://www.cablematters.com/pc-70-160-5-pack-cat6-snagless-ethernet-patch-cable.aspx .
+
+Amazon product-search links for matching the exact model/pack (not yet verified as a specific seller offer):
+- https://www.amazon.com/s?k=TP-Link+TL-SG116E+16+Port+Easy+Smart+Switch
+- https://www.amazon.com/s?k=Cable+Matters+Cat6+3ft+5+Pack+Snagless
+
+**Verification before checkout:** confirm switch model suffix **E** (not TL-SG116), 16 Gigabit ports, included power adapter, exact 3-foot cable length, quantity five, total prices, and adequate cable length from router to switch.
 
 ## Price and compatibility gate
 
