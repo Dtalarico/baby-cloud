@@ -10,7 +10,7 @@ All documentation shall be understandable to an intelligent reader without an en
 
 Technical accuracy and human readability are equally required. Corrections shall preserve historical context rather than silently rewriting earlier decisions.
 
-See the project documentation policy for detailed requirements.
+See the [project documentation policy](docs/documentation-policy.md) for detailed requirements.
 
 ## Project Overview
 
@@ -24,9 +24,17 @@ Baby Cloud also serves as a hands-on learning environment for Red Hat certificat
 
 The original objective is to build an interconnected eight-node Raspberry Pi computing system capable of running distributed workloads.
 
-The project will begin with four physical nodes and expand toward eight as equipment, technical requirements, and engineering experience permit.
+The original implementation plan called for beginning with four physical nodes and expanding toward eight. That original intention is preserved here; the current two-node starting scope and its funding rationale are documented separately.
 
 Final node assignments, cluster software, operating systems, scheduling architecture, and resource allocation remain under evaluation.
+
+## Current Project Status — 2026-10-21
+
+**Current implementation milestone:** Plan to acquire **two Raspberry Pi 4 nodes** first, establish a working Linux/networking foundation, then expand to four nodes and ultimately pursue the original eight-node goal. This smaller first purchase was chosen because available funding initially constrained the four-node starting plan; it does not replace the original vision. The author reports that purchasing funds are now available. **No physical node purchase, deployment, or test is recorded as complete.**
+
+See the [dated decision record](docs/decisions/2026-10-21-two-node-initial-build.md) and [current procurement checklist](docs/procurement/current-two-node-procurement.md). The earlier Pi 5 estimate was a documentation error; Raspberry Pi 4 was intended throughout.
+
+**Phase labels:** The phase names below describe the original architecture roadmap, not completed milestones. The two-node start is the current foundation sub-milestone. A separate use of “phase two” has not yet been reconciled with these roadmap labels; no phase completion is asserted.
 
 ## Primary Engineering Objectives
 
@@ -75,7 +83,7 @@ The RHCSA training track remains separate from the Baby Cloud infrastructure rep
 
 **Phase 1 — Foundation**
 
-Establish a documented, working four-node Raspberry Pi Linux environment.
+Begin with a documented, working **two-node Raspberry Pi 4** Linux environment; expand to the originally intended four-node foundation milestone when feasible.
 
 **Phase 2 — Expansion**
 
