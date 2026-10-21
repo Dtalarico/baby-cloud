@@ -51,7 +51,7 @@ For every line, record: seller, exact product title, SKU/model, URL, quantity, u
 
 **Vilros starter-kit and Amazon networking orders both confirmed on 2026-10-21.** Surge-protected power distribution and labeling remain conditional on actual setup; do not treat items as received or operational.
 
-## One-day procurement event record (fill in after checkout)
+## One-day procurement event record (confirmed orders)
 
 **Event date:** 2026-10-21 (both vendor orders confirmed)  
 **Purpose:** Initial two-node Baby Cloud hardware procurement  
@@ -59,13 +59,16 @@ For every line, record: seller, exact product title, SKU/model, URL, quantity, u
 
 | Vendor | Actual order date/time | Order reference (redacted) | Items/SKUs | Subtotal | Tax | Shipping | Total | Status |
 |---|---|---|---|---:|---:|---:|---:|---|
-| Vilros | 2026-10-21 20:47:43 UTC (confirmation email; exact checkout time not separately verified) | SHV-161663 (vendor order number) | 2 × Raspberry Pi 4 Complete Starter Kit, 4GB; SKU VR4B4GBCK008_A per pre-order support correspondence | $222.58 | $0.00 shown / no separate tax line | $0.00 | $222.58 | Confirmed, awaiting shipment |\n| Amazon | 2026-10-21 (exact time not shown) | 111-1685721-1526626 | 1 × TP-Link TL-SG116E 16-port Gigabit Easy Smart Switch ($59.99); 1 × Cable Matters Cat6 3-foot 5-pack ($14.99) | $74.98 | $5.44 inferred from total minus cart subtotal; invoice breakdown not supplied | Free delivery indicated at cart; final shipping charge not separately itemized | $80.42 | Order confirmed; Amazon displayed 'Arriving tomorrow' (2026-10-22), not delivered |
+| Vilros | 2026-10-21 20:47:43 UTC (confirmation email; exact checkout time not separately verified) | SHV-161663 (vendor order number) | 2 × Raspberry Pi 4 Complete Starter Kit, 4GB; SKU VR4B4GBCK008_A per pre-order support correspondence | $222.58 | $0.00 shown / no separate tax line | $0.00 | $222.58 | Confirmed, awaiting shipment |
+| Amazon | 2026-10-21 (exact time not shown) | 111-1685721-1526626 | 1 × TP-Link TL-SG116E 16-port Gigabit Easy Smart Switch ($59.99); 1 × Cable Matters Cat6 3-foot 5-pack ($14.99) | $74.98 | $5.44 inferred from total minus cart subtotal; invoice breakdown not supplied | Free delivery indicated at cart; final shipping charge not separately itemized | $80.42 | Order confirmed; Amazon displayed 'Arriving tomorrow' (2026-10-22), not delivered |
 
 **Overall spend recorded:** $303.00 ($222.58 Vilros + $80.42 Amazon; both confirmed orders, not delivery)  
 **Exceptions / orders on later dates:** None recorded yet; document if they occur.
 
 **Additional purchase evidence:** The purchaser supplied checkout confirmation reference `500P5MZVU`; the separate merchant order confirmation email uses order number `SHV-161663`. Preserve both identifiers as distinct references rather than treating them as interchangeable. The email states the order is being prepared and that shipment will be notified later. Free Economy Shipping quotes 12–18 days, **not** a guaranteed delivery date. The purchaser starred the confirmation email, retained privately. Neither the personal checkout URL nor payment-card details are recorded here.  
-**Amazon evidence and decision:** The purchaser's Amazon Orders page dated 2026-10-21 showed one order with both exact approved items, total $80.42, and 'Arriving tomorrow.' The earlier $74.98 cart subtotal was not the final charge. The $5.44 difference is arithmetic, not a verified tax line; obtain invoice breakdown if needed. The more expensive Omada SG2218 was reconsidered and deliberately deferred: the initial two-node cluster should be brought online within budget before purchasing advanced management features. The selected TL-SG116E remains suitable for initial networking and has 16 Gigabit ports for planned expansion. No claim of future-proofing or advanced enterprise switch capabilities is made.\n\n**Private evidence:** Retain full receipts and payment information outside public GitHub; include only sanitized references here.
+**Amazon evidence and decision:** The purchaser's Amazon Orders page dated 2026-10-21 showed one order with both exact approved items, total $80.42, and 'Arriving tomorrow.' The earlier $74.98 cart subtotal was not the final charge. The $5.44 difference is arithmetic, not a verified tax line; obtain invoice breakdown if needed. The more expensive Omada SG2218 was reconsidered and deliberately deferred: the initial two-node cluster should be brought online within budget before purchasing advanced management features. The selected TL-SG116E remains suitable for initial networking and has 16 Gigabit ports for planned expansion. No claim of future-proofing or advanced enterprise switch capabilities is made.
+
+**Private evidence:** Retain full receipts and payment information outside public GitHub; include only sanitized references here.
 
 ## Delivery and acceptance (separate later records)
 
