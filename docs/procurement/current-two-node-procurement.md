@@ -1,7 +1,7 @@
 # Current two-node procurement checklist
 
 **Created:** 2026-10-21  
-**Status:** PRE-PURCHASE — no transactions or physical tests recorded  
+**Status:** FIRST PURCHASE CONFIRMED — two starter kits ordered; shipping, receipt, and physical tests pending  
 **Decision basis:** [Two-node initial build](../decisions/2026-10-21-two-node-initial-build.md)
 
 ## Purchasing objective
@@ -37,20 +37,22 @@ Buy all necessary items on one calendar date, if feasible, to make the first Bab
 
 For every line, record: seller, exact product title, SKU/model, URL, quantity, unit price, shipping, tax, total, and whether it is approved. Do not copy prices from the 2026-10-12 estimate. Check that the switch supports the intended network, that its ports are ordinary Ethernet (not assumed PoE power for the Pis), that kits include suitable Pi 4 power/cooling, and that cable counts and lengths match the setup.
 
-**Cart review is pending. No vendor order has been placed by this document.**
+**Vilros starter-kit order confirmed on 2026-10-21.** Switch, network cables, and other accessories remain to be selected and ordered; do not treat the full cart as complete.
 
 ## One-day procurement event record (fill in after checkout)
 
-**Event date:** Pending actual first order  
+**Event date:** 2026-10-21 (first vendor order confirmed)  
 **Purpose:** Initial two-node Baby Cloud hardware procurement  
-**Purchaser confirmation:** Pending
+**Purchaser confirmation:** Confirmed by checkout page supplied by the purchaser and starred Vilros confirmation email dated 2026-10-21 20:47:43 UTC.
 
 | Vendor | Actual order date/time | Order reference (redacted) | Items/SKUs | Subtotal | Tax | Shipping | Total | Status |
 |---|---|---|---|---:|---:|---:|---:|---|
-| Pending | Pending | Pending | Pending | — | — | — | — | Not ordered |
+| Vilros | 2026-10-21 20:47:43 UTC (confirmation email; exact checkout time not separately verified) | SHV-161663 (vendor order number) | 2 × Raspberry Pi 4 Complete Starter Kit, 4GB; SKU VR4B4GBCK008_A per pre-order support correspondence | $222.58 | $0.00 shown / no separate tax line | $0.00 | $222.58 | Confirmed, awaiting shipment |
 
-**Overall spend:** Pending  
-**Exceptions / orders on later dates:** None recorded yet; document if they occur.  
+**Overall spend recorded:** $222.58 (Vilros order only; further procurement pending)  
+**Exceptions / orders on later dates:** None recorded yet; document if they occur.
+
+**Additional purchase evidence:** The purchaser supplied checkout confirmation reference `500P5MZVU`; the separate merchant order confirmation email uses order number `SHV-161663`. Preserve both identifiers as distinct references rather than treating them as interchangeable. The email states the order is being prepared and that shipment will be notified later. Free Economy Shipping quotes 12–18 days, **not** a guaranteed delivery date. The purchaser starred the confirmation email, retained privately. Neither the personal checkout URL nor payment-card details are recorded here.  
 **Private evidence:** Retain full receipts and payment information outside public GitHub; include only sanitized references here.
 
 ## Delivery and acceptance (separate later records)
