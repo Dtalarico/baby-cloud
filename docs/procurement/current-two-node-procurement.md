@@ -21,6 +21,18 @@ Buy all necessary items on one calendar date, if feasible, to make the first Bab
 
 **Important:** The two starter kits' exact contents must be verified at checkout. Vendor support has confirmed a 32 GB Raspberry Pi OS microSD card, but included components and actual shipment must still be checked. Raspberry Pi OS may serve for initial hardware verification; final RHEL or RHEL-adjacent ARM64 operating system remains undecided.
 
+## Vendor correspondence — 2026-10-21 (pre-purchase evidence)
+
+**Customer inquiry:** On October 21, 2026, the project author emailed Vilros Support to clarify a contradiction on the Raspberry Pi 4 Pre-Assembled Complete Starter Kit product page. The included-components list said a **32 GB microSD card preloaded with Raspberry Pi OS** was included, while a later page note said a microSD card was not included. The inquiry explicitly identified the **4 GB kit, SKU `VR4B4GBCK008_A`**, and stated intent to buy two.
+
+**Vendor reply:** On October 21, 2026, **Kim, Vilros Support**, replied under support ticket **#2804** that the 32 GB preloaded microSD card **is included in the Complete Starter Kit**. The vendor attributed the contradictory FAQ statement to **Basic Starter Kits**, and also confirmed a **power supply, case, and cables** in the Complete Starter Kit.
+
+**Evidence classification:** Direct vendor statement, **not** independently verified delivered contents. The original inquiry and reply are retained in the purchaser's private email account. Do not publish email authentication tokens or private ticket-access links. Check actual delivered components at receiving inspection.
+
+**Public product page:** https://vilros.com/products/vilros-raspberry-pi-4-pre-assembled-complete-starter-kit
+
+**Shopping-page observation (2026-10-21):** The public listing displayed SKU `VR4B4GBCK008_A` and an Add to Cart price of **$158.99** when reviewed. Confirm the selected **4 GB** variant and checkout total; a page price is not a paid price. The listing still contains a contradictory microSD exclusion note, resolved for this SKU by the vendor's direct email.
+
 ## Price and compatibility gate
 
 For every line, record: seller, exact product title, SKU/model, URL, quantity, unit price, shipping, tax, total, and whether it is approved. Do not copy prices from the 2026-10-12 estimate. Check that the switch supports the intended network, that its ports are ordinary Ethernet (not assumed PoE power for the Pis), that kits include suitable Pi 4 power/cooling, and that cable counts and lengths match the setup.
