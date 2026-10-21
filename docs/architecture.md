@@ -2,7 +2,7 @@
 
 ## Overview
 
-Baby Cloud is a personal infrastructure and distributed-computing laboratory intended to develop Linux administration, networking, automation, and systems-engineering skills. The original long-term vision is an eight-node Raspberry Pi Beowulf-style cluster, beginning with four physical nodes.
+Baby Cloud is a personal infrastructure and distributed-computing laboratory intended to develop Linux administration, networking, automation, and systems-engineering skills. The original long-term vision is an eight-node Raspberry Pi Beowulf-style cluster, with four physical nodes originally planned as the first build. The current initial build is two Raspberry Pi 4 nodes because the four-node starting scope was constrained by funding; the four- and eight-node objectives remain. See [the dated decision record](decisions/2026-10-21-two-node-initial-build.md).
 
 The project also includes a separate RHEL-based virtual-machine learning environment and planned applications associated with Radio Free Redoubt.
 
@@ -30,12 +30,14 @@ Baby Cloud may explore all three approaches. Their roles must not be conflated, 
 
 ### Initial hardware milestone
 
-- Acquire, assemble, and bring online four Raspberry Pi nodes
+- First acquire, assemble, and bring online **two Raspberry Pi 4 nodes**; expand to the originally intended four-node milestone when feasible
 - Establish networking, remote administration, consistent identities, and repeatable baseline configuration
 - Measure actual resources and capabilities before fixing workload assignments
 - Keep the environment recoverable and document verified results
 
-### Eight-node target
+#**Current status (2026-10-21):** Purchase planned; no physical nodes acquired or verified as operational in this record. The exact ARM64 Linux distribution and network switch are still under evaluation. The 2026-10-12 Pi 5 procurement listing was a documentation error, not an actual change in hardware intent.
+
+## Eight-node target
 
 The eight-node Beowulf-style system is the original long-term ambition. Roles for Nodes 5–8, cluster software, job scheduling, storage, network fabric, and compute workloads remain **undecided**.
 
