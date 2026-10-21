@@ -1,3 +1,7 @@
+> **HISTORICAL BASELINE — SUPERSEDED FOR PURCHASING (2026-10-21).** This October 12 estimate is retained below as evidence of what was recorded at the time, **not** as a current shopping list. It incorrectly specifies Raspberry Pi 5 and Pi 5 accessories, although Raspberry Pi 4 was always intended. The current initial scope is **two Raspberry Pi 4, 4 GB Vilros starter kits** (SKU `VR4B4GBCK008_A`) with a separately verified switch, cables, and any required accessories. Do **not** purchase from the prices, quantities, or compatibility assumptions below. See [the dated decision record](../decisions/2026-10-21-two-node-initial-build.md) and [the current procurement checklist](current-two-node-procurement.md). The author reports funds available; no purchase is recorded here.
+
+---
+
 # Initial Estimated Procurement List
 
 **Project:** Baby Cloud Raspberry Pi Cluster  
