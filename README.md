@@ -1,5 +1,17 @@
 # Baby Cloud
 
+## Governing Documentation Principle
+
+**The future must know what the past was thinking.**
+
+Baby Cloud shall preserve not only what was done, but what was intended, what was understood at the time, why decisions were made, and what evidence supported them.
+
+All documentation shall be understandable to an intelligent reader without an engineering background. Our practical standard is simple: **write so that the project author's mother can follow the work.**
+
+Technical accuracy and human readability are equally required. Corrections shall preserve historical context rather than silently rewriting earlier decisions.
+
+See the project documentation policy for detailed requirements.
+
 ## Project Overview
 
 Baby Cloud is a personal Linux infrastructure and distributed-computing engineering project, with a long-term goal of building an eight-node Raspberry Pi cluster inspired by Beowulf computing systems.
