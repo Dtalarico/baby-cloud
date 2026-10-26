@@ -14,8 +14,8 @@ This is a contemporaneous status update based on the project author's reports an
 
 ## Proposed eight-node naming plan
 The long-term eight-node naming convention was confirmed in conversation, preserving the intended order:
-1. Caspar — Magi
-2. Balthazar — Magi
+1. Caspar — Magi (original entry; see correction below)
+2. Balthazar — Magi (original entry; see correction below)
 3. Melchior — Magi
 4. Spike Spiegel — Bebop
 5. Jet Black — Bebop
@@ -33,3 +33,7 @@ The author specifically corrected the sequence to place **Ein before Ed**, match
 
 ## Assistance and provenance
 The author reported observations and made naming and configuration decisions. The assistant assembled this journal entry from those reports. No independent physical hardware tests were performed by the assistant.
+
+## Subsequent correction — 2026-10-26
+
+The original list above is preserved as the author's 2026-10-23 record, including its spelling errors. The author clarified that the MAGI names must use the *Neon Genesis Evangelion* spellings **Casper**, **Balthasar**, and **Melchior**. This is a correction to the written names, **not** a new hardware design or a retroactive change to what was discussed on October 23. The Baby Cloud node sequence is **Casper-1**, **Balthasar-2**, **Melchior-3** (third node planned for future expansion); these Baby Cloud sequence numbers intentionally differ from the fictional MAGI labels Casper-3, Balthasar-2, and Melchior-1. No operating-system hostnames have yet been configured. See [the naming correction record](../docs/decisions/2026-10-26-magi-naming-correction.md).

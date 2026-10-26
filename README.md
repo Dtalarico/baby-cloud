@@ -36,6 +36,10 @@ See the [dated decision record](docs/decisions/2026-10-21-two-node-initial-build
 
 **Phase labels:** The phase names below describe the original architecture roadmap, not completed milestones. The two-node start is the current foundation sub-milestone. A separate use of “phase two” has not yet been reconciled with these roadmap labels; no phase completion is asserted.
 
+## Node naming convention — clarified 2026-10-26
+
+The proposed first three node names use the canonical *Neon Genesis Evangelion* MAGI spellings: **Casper-1**, **Balthasar-2**, and **Melchior-3**. The numeric suffixes identify the Baby Cloud node order, not the fictional MAGI numbering. Only the first two physical kits have been received; no hostnames have been configured. See the [dated naming correction](docs/decisions/2026-10-26-magi-naming-correction.md). The original October 23 record is preserved with an explicit appended correction.
+
 ## Primary Engineering Objectives
 
 - Build and administer a multi-node Linux environment.
