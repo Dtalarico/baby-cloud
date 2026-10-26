@@ -1,7 +1,7 @@
 # Current two-node procurement checklist
 
 **Created:** 2026-10-21  
-**Status:** TWO VENDOR ORDERS CONFIRMED — Vilros starter kits and Amazon networking equipment ordered; physical receipt and testing pending  
+**Status:** INITIAL HARDWARE RECEIVED AND VISUALLY INVENTORIED — receiving accepted 2026-10-26; functional testing and commissioning pending  
 **Decision basis:** [Two-node initial build](../decisions/2026-10-21-two-node-initial-build.md)
 
 ## Purchasing objective
@@ -13,13 +13,13 @@ Buy all necessary items on one calendar date, if feasible, to make the first Bab
 | Item | Qty | Selection / verification required |
 |---|---:|---|
 | Raspberry Pi 4 Complete Starter Kit, 4 GB | 2 | **Vilros SKU `VR4B4GBCK008_A`**; confirm current listing, included power supply, case/cooling, and 32 GB preloaded microSD |
-| 16-port Gigabit Easy Smart Ethernet switch | 1 | **Ordered from Amazon on 2026-10-21: TP-Link TL-SG116E.** Confirm hardware revision and supplied components on receipt. Supports VLAN, QoS, port mirroring; not PoE. SG2218 was evaluated and explicitly deferred on cost grounds; not ordered |
-| Cat6 Ethernet patch cables | 1 × 5-pack | **Ordered from Amazon on 2026-10-21: Cable Matters Cat6 Snagless Ethernet Patch Cable, 3-foot, 5-pack.** Three cables needed initially (two Pis plus router uplink); two spare. Verify the uplink route is within 3 feet at installation |
+| 16-port Gigabit Easy Smart Ethernet switch | 1 | **Ordered from Amazon on 2026-10-21: TP-Link TL-SG116E.** Switch received; hardware revision and functional operation not yet verified. Supports VLAN, QoS, port mirroring; not PoE. SG2218 was evaluated and explicitly deferred on cost grounds; not ordered |
+| Cat6 Ethernet patch cables | 1 × 5-pack | **Ordered from Amazon on 2026-10-21: Cable Matters Cat6 Snagless Ethernet Patch Cable, 3-foot, 5-pack.** Three cables needed initially (two Pis plus router uplink); two spare. Cables received and remain bagged; verify quantity, length, and uplink route at installation |
 | Surge-protected power distribution | As needed | Verify sufficient outlets, rating, and whether an existing suitable unit is available |
 | Labels / cable organization | As needed | Confirm quantities after physical layout is planned |
 | Additional storage or adapters | Not yet approved | Do not automatically purchase Pi 5 NVMe HAT+ parts or accessories from the superseded estimate |
 
-**Important:** The two starter kits' exact contents must be verified at checkout. Vendor support has confirmed a 32 GB Raspberry Pi OS microSD card, but included components and actual shipment must still be checked. Raspberry Pi OS may serve for initial hardware verification; final RHEL or RHEL-adjacent ARM64 operating system remains undecided.
+**Important:** The two starter kits' exact contents must be verified at checkout. Vendor support specified a 32 GB Raspberry Pi OS microSD card; on 2026-10-26 both delivered cards were photographed with 64 GB labels. The contents, capacity in operation, and bootability remain untested. Raspberry Pi OS may serve for initial hardware verification; final RHEL or RHEL-adjacent ARM64 operating system remains undecided.
 
 ## Vendor correspondence — 2026-10-21 (pre-purchase evidence)
 
@@ -77,3 +77,11 @@ Record delivery date, received quantities and actual kit contents, physical dama
 ## Historical context
 
 The [2026-10-12 estimate](initial-estimated-procurement-list.md) remains in version history with an explicit warning. Its Pi 5 selection was a **documentation error**, not a Pi 5-to-Pi 4 design change. Four nodes remain the intermediate goal; eight remain the long-term vision.
+
+## Receiving acceptance update — 2026-10-26
+
+**Receipt accepted, not functionally accepted.** Vilros confirmed delivery of two preassembled Raspberry Pi 4 4 GB kits on 2026-10-26, and the author independently inspected, photographed, and repacked both complete kits without finding missing accessories or visible damage. Vendor support had specified 32 GB preloaded microSD cards; both delivered Samsung cards are marked **64 GB**. The included Vilros VILP221 USB 3.0 microSD adapter packaging describes transfer to/from cards; writing has not been tested. Internal board/RAM, card image, and all power/network functions remain unverified.
+
+The TP-Link TL-SG116E switch and Cable Matters cable pack were previously reported delivered 2026-10-22. As of 2026-10-26, the switch box is open, its power supply is alongside it, its instructions are on top, and the Cat6 cables remain bagged. No operational test has been performed. Historical order/shipping estimates above remain as originally recorded; later receipt does not retroactively change the earlier state.
+
+See [the dated receiving and visual-inventory record](../../journal/2026-10-26-hardware-receiving-and-visual-inventory.md) for itemized evidence, acceptance boundaries, and commissioning gates. Full receipts and correspondence are retained privately.
