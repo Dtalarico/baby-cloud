@@ -47,3 +47,42 @@ Before approving a material change, ask:
 3. Can another person trace the evidence and chronology?
 4. Are uncertainties and pending verification visible?
 5. Could someone continue the work without inventing missing history?
+
+
+---
+
+## BC-DOC-001 — Additive operational-evidence extension (2026-10-27)
+
+**Status:** Approved by the project author; appended without changing the original BC-DOC-001 text.
+
+**Source and purpose.** The project author directed a reciprocal synthesis with [LinuxLingo's LL-DOC-001](https://github.com/Dtalarico/LinuxLingo/blob/main/docs/documentation-policy.md), the [LinuxLingo Master Spec](https://github.com/Dtalarico/LinuxLingo/blob/main/LINUXLINGO_MASTER_SPEC.md), and Adaptive Infrastructure Tutoring Prompt v11 (2026-10-18). This extension strengthens the existing Baby Cloud engineering record; it does not make Baby Cloud a command-drill curriculum or replace any earlier principle.
+
+### Operational purpose and mechanism
+
+For unfamiliar commands, installation procedures, or engineering tests, explain the intended objective, why the operation is necessary, relevant prior state, functional difference from known alternatives, expected output/change, and what observation would confirm completion. Describe architecture boundaries when they matter: machine, user identity, environment, network endpoint, service manager, storage object, input/output stream, or other involved layer. Preserve technical vocabulary with plain-English explanations consistent with the “write for the author's mother” standard.
+
+### Observable success, failure, and partial outcomes
+
+For actual commissioning and troubleshooting records, describe the starting state, procedure, expected result, actual result, relevant output fields, success signatures, failure signatures, and verification method. If a command succeeds silently, state how success can be tested. Do not call an unobserved effect verified.
+
+A process may partially succeed: network link may come up while name resolution fails; authentication may succeed while a later environment step warns; a service may be configured for boot without currently running. Distinguish which stage succeeded, which failed, what state remained, and what must be checked next. Avoid compressing multi-layer outcomes into unsupported “worked” or “failed” descriptions.
+
+### Evidence and interpretation boundaries
+
+Separate (1) machine-generated output and measured system state, (2) the author's or assistant's narration, (3) vendor specifications, and (4) third-party platform or grading results. Do not represent human-typed text as machine output; do not treat a purchase estimate, vendor claim, shipment, receipt, functional boot, network test, and operational commissioning as interchangeable verification stages.
+
+When a problem appears, consider whether it reflects a failed operation, a missing prerequisite/coverage gap, or insufficient telemetry to interpret the state. Explain reasonable earlier assumptions and the new mechanism that required correction; record ambiguities and conflicting evidence without rewriting the prior record.
+
+### Progressive independence and durable proof
+
+Record whether the engineer-in-training performed an action independently, with coaching, or through assistant-supported drafting. A successful result alone does not demonstrate independent competence; record reasoning, troubleshooting and verification as distinct evidence where relevant. Progress from demonstration to co-writing, student drafting, and independently authored/verified technical logs.
+
+Cite only source-specific relevant references and identify what the reader is expected to find, rather than using an entire manual as a substitute for instructions. Preserve real outputs and verification details safely; redact secrets and private identifiers.
+
+### Historical preservation and policy boundaries
+
+The governing BC-DOC-001 policy above remains intact. Maintain **PROPOSED / APPROVED / EXECUTED / VERIFIED**, clear decision provenance, original historical context, explicit forward-dated corrections, privacy, coherent Git commits, and independent usability of the repository. Apply LinuxLingo's evidence and instructional insights where applicable to Baby Cloud, while preserving Baby Cloud's architecture, procurement, and commissioning authorities.
+
+**Review test:** Could a new reader explain what the engineer intended, what was attempted, how the system actually responded, which claim the evidence supports, what is still unknown, and how to verify the next step without previous conversation context?
+
+**Implementation boundary:** This additive policy does not certify previously untested hardware or retrospectively change receiving/commissioning milestones. The initial two Raspberry Pi kits were visually received/accepted on 2026-10-26; functional commissioning remained pending at the time of this extension.
