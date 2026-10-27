@@ -145,3 +145,14 @@ The objective is not to have the assistant produce polished entries indefinitely
 ## Long-Term Objective
 
 Develop Baby Cloud into a functioning eight-node Linux engineering laboratory that demonstrates practical systems administration, distributed computing, useful radio-related workloads, and progressively deeper understanding of Linux architecture.
+
+
+---
+
+## Cross-project documentation and operational verification — 2026-10-27
+
+Baby Cloud's historical engineering principle remains **“The future must know what the past was thinking.”** Under the author's approved documentation synthesis with LinuxLingo, [BC-DOC-001](docs/documentation-policy.md) now includes a dated **additive** extension emphasizing operational purpose, observable success and failure, partial system outcomes, genuine system-generated evidence, explicit verification, and progressively independent technical documentation.
+
+The extension draws on [LinuxLingo's LL-DOC-001](https://github.com/Dtalarico/LinuxLingo/blob/main/docs/documentation-policy.md), its existing instructional architecture, and Adaptive Infrastructure Tutoring Prompt v11. These concepts improve how Baby Cloud records physical builds, service configuration, troubleshooting, and commissioning without turning this infrastructure project into a quiz application. The two repositories retain their distinct design purposes and historical records.
+
+**Historical preservation:** Earlier README text, engineering journals, procurement records, decisions, and phase descriptions above remain unchanged. This dated addition does not assert that an untested Raspberry Pi or network service has been commissioned. Refer to the latest dated engineering journal for actual verified state.
