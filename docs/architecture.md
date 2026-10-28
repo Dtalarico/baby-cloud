@@ -66,3 +66,27 @@ Radio Free Redoubt and the Baby Cloud DX League are potential consumers of clust
 Record proposals separately from approved decisions, completed actions, and verified results. Document commands executed, observed outcomes, problems, recovery steps, and design tradeoffs in dated journal entries.
 
 See `journal/2026-10-10-design-review.md` for this planning discussion.
+
+
+---
+
+## Founding supercomputer objective — clarification recorded 2026-10-28
+
+**Status: Author-confirmed architectural intent; not a claim of completed implementation.** This section clarifies the original motivation and priority without replacing the earlier exploratory architecture or asserting that the cluster is operational.
+
+Baby Cloud's **primary mission** is to build an expandable, ultimately eight-node **Beowulf-style parallel-computing cluster**: multiple inexpensive physical computers cooperate on **one coordinated computational workload**. Work is divided among participating nodes, executed in parallel, and combined into a verifiable result. Networking the computers together, or running separate unrelated services on each, is not by itself sufficient to fulfill this mission.
+
+The author has pursued this idea for decades. Earlier envisioned implementations involved **DEC Alpha processors** and later **surplus Xeon blade servers** offered by a college. An enduring inspiration is the **SETI distributed-computing project** and the prospect of combining modest individual computers to tackle a much larger problem. Raspberry Pis are the current affordable path toward that longstanding ambition; the two-node beginning is a budget-driven implementation stage, not a reduction of the eight-node objective.
+
+**What success must demonstrate:**
+
+1. At least two physical nodes genuinely participate in the same computational job, with identifiable work assigned to each and a combined correct result.
+2. The experiment records commands, software versions, node roles, actual output, and verification evidence—not merely a diagram or successful network pings.
+3. A single-node baseline is compared with multi-node execution, including elapsed time and communication overhead. Performance gains are a goal to test, not a presumed outcome.
+4. The design remains expandable toward eight physical nodes as resources permit.
+
+**MPI (Message Passing Interface)** is a leading candidate for coordinating a distributed-memory parallel workload, subject to software and hardware validation. It is not yet deployed or selected as an irrevocable implementation requirement. A real Beowulf-style cluster does not literally merge the nodes into one operating system or shared-memory processor.
+
+**Priority and boundaries:** Linux administration, remote access, monitoring, automation, storage, recoverability, virtualization exploration, Radio Free Redoubt, and potential LinuxLingo experiments may be valuable supporting or application work. They do **not** redefine Baby Cloud's founding supercomputer objective. This clarification gives compute-cluster capability priority while preserving earlier open design questions and the possibility of additional workloads later.
+
+**Next verification milestone:** Commission and document the delivered two-node Raspberry Pi hardware; subsequently demonstrate a real two-node parallel computation before claiming the initial Beowulf capability has been achieved.
