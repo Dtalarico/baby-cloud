@@ -48,3 +48,25 @@ This is an **in-progress observation**, not a successful hardware commissioning 
 - **Safety:** No formatting, initialization, partition deletion, flashing, or writes have been reported. Continue with **read-only Windows Disk Management observation**; cancel any initialize/format prompt and identify the approximately 64 GB removable disk by size/volume before interpreting its partition map.
 
 **Current result:** External reader **PASS for Windows recognition and read access**; bootability and OS contents **UNVERIFIED**. Internal laptop reader **NOT TESTED**. The previous "not tested" lines above remain as the historical state at the time they were written; this dated update records the later evidence.
+
+---
+
+## Observation 3 — Windows Disk Management partition inspection (2026-10-31)
+
+**Evidence:** Author-supplied photo of Windows Disk Management on the old ASUS VivoBook. Original photograph retained by author, not yet committed to this repository. This is a read-only observation; no modification was authorized or reported.
+
+The screenshot shows **Disk 2**, removable, **59.69 GB**, online, identified as the microSD reader/card. Its partition map is visible:
+
+| Disk 2 region | Displayed size | Windows observation |
+|---|---:|---|
+| `bootfs (E:)` | 512 MB | FAT32, Healthy (Primary Partition) |
+| Next partition | 4.93 GB | Healthy (Primary Partition); Windows does not display a recognized filesystem |
+| Remaining region | 54.25 GB | Unallocated |
+
+**Interpretation, not yet verified:** This layout, together with the previously observed Raspberry Pi boot files, is consistent with a prewritten Raspberry Pi OS image whose Linux root partition has not yet been expanded. It does **not** prove which OS version is present, that the second partition is ext4, or that the card boots. The manufacturer's 64 GB nominal card size is consistent with Windows' reported 59.69 GB capacity due to differing GB/GiB units.
+
+**Important disk identity:** Disk 1 is the author's separate **Extreme SSD (D:)**, approximately 931.48 GB, containing important existing work. It must **not** be selected for any card imaging, formatting, initialization, or partition operation. This screenshot documents why explicit target-device verification is mandatory before any destructive imaging step.
+
+**Outcome:** USB reader/card recognition and readable boot partition **PASS**; partition table observed **PASS**; Linux filesystem type, bootability, installed OS release, initial setup and eventual filesystem expansion **NOT VERIFIED**. The built-in SD card slot remains **UNTESTED**. No writes or changes were performed as part of this inspection.
+
+**Next planned stage:** Determine a safe way to verify the operating-system image and prepare for first boot without modifying the preserved evidence prematurely. Preserve original photographs for later attachment; do not imply they were uploaded to GitHub.
