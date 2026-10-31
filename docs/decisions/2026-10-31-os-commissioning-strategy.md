@@ -67,3 +67,27 @@ The separate radio campaign document names the **SDRplay RSP1B** as the preferre
 **Not executed or verified by this record:** any new OS flash, Pi boot, network test, MPI run, Rocky installation, SDR connection, purchase of additional SD cards or expansion hardware.
 
 This new dated decision record adds context without modifying or replacing earlier files. **The future must know what the past was thinking.**
+
+---
+
+## Same-day decision addendum — inspect and boot the supplied OS before any reimage (2026-10-31)
+
+**Authority:** Project author. **Status:** Approved next commissioning approach; **not yet implemented**. This addendum changes the **immediate sequence**, without erasing the earlier approved longer-term Raspberry Pi OS Lite and Rocky Linux experiments.
+
+During today's first physical inspection, one supplied 64 GB card was read through the Vilros USB reader on Windows. Its FAT32 `bootfs` partition was readable, and `issue.txt` showed `Raspberry Pi reference 2023-12-05` and a `pi-gen` build ending in `stage4`. The partition layout included a 512 MB FAT32 boot partition, an approximately 4.93 GB second partition, and approximately 54.25 GB unallocated space. This is good evidence of a preloaded Raspberry Pi OS-derived image, **not** yet evidence of successful boot, precise OS/architecture identification or SSH readiness.
+
+**The author's explicit correction:** Do **not** reflash the original card merely to perform initial setup. The immediate goal is to **test the existing vendor-preloaded OS headlessly on the existing card**, preserving the installed system rather than replacing it. Using a monitor/keyboard/mouse was discussed as a possible alternative but is **not** the author's preferred next method. The author wants to prepare the existing image for remote first boot from Windows, connect one Pi via Ethernet to NERV, and gain SSH access. No microSD card has been reflashed, and no Pi has been powered on.
+
+**Proposed technical sequence (requires verification before any write):**
+1. Reinsert the previously inspected card in the Vilros reader and positively identify the intended removable disk and `bootfs` volume; protect the separate Extreme SSD and all unrelated disks.
+2. Determine the appropriate **first-boot user provisioning** mechanism for this actual preloaded image, and verify the availability/behavior of SSH enablement. Historically a boot-partition `ssh` marker and `userconf.txt` with a correctly hashed password were supported for Raspberry Pi OS, but **compatibility with this specific preinstalled image is not independently proven**. Do not write account secrets in plaintext, guess at the current user's password, or assert that the SSH marker alone establishes an authorized user account.
+3. If the original as-shipped image must be recoverable byte-for-byte, decide whether to capture a full image backup **before the first write or boot**. This is an explicit preservation choice, not permission to erase, format or reimage the card. The user has not yet approved a card write.
+4. Once the provisioning method is verified and approved, apply only the minimal required setup on the existing card; record each file and setting changed. Safely eject it, install it into the first Pi, connect Ethernet to NERV, then power up.
+5. Observe the Pi's appearance in the AT&T gateway's DHCP/device list, locate its actual IP, connect by SSH and verify host identity, OS release, architecture, kernel, disk/partition expansion, memory and network. Record the observed commands/output without claiming functionality in advance.
+6. Only after the original image is tested should the author decide whether/when to install Raspberry Pi OS Lite 64-bit on this or separate media. The earlier plan to retain known-good media and later explore Rocky Linux ARM64 on additional cards remains in effect as a future decision, not authorization to overwrite today's supplied image.
+
+**Why:** A preloaded OS is part of the as-delivered test baseline. Replacing it before trying to boot it destroys information and adds unnecessary uncertainty. Headless commissioning can still be conducted while retaining the installed image, subject to appropriate initial account/SSH preparation. First boot and initial provisioning may write to the card or expand the filesystem; it is therefore incorrect to describe a successfully booted card as byte-for-byte unchanged.
+
+**Next session gate:** Finish coursework or take a break first; the author may resume this headless preparation later on October 31 or another day. Before acting, check the card's present state and the image-specific procedure. The first operational milestone is a verified SSH login to the first physical Raspberry Pi; the longer-term Beowulf milestone still requires a single coordinated workload across at least two actual nodes.
+
+**Documentation provenance:** The change in approach and preservation concern were proposed and insisted upon by the author; AI assisted in recording the decision. This addendum supersedes the earlier *immediate flashing sequence only*, without altering the past record or declaring any future installation completed.
