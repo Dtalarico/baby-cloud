@@ -19,3 +19,11 @@ The author selected NERV as the device identity for the planned MAGI cluster bac
 The author reports changing initial administrator credentials; no credentials are stored in this public file. No Pi was powered on or connected during this session. Future work: verify setting persistence, check a real wired client's traffic forwarding, and record any further network configuration only after a test.
 
 Provenance: Physical work and photographs supplied by the project author. Documentation drafted with AI assistance under BC-DOC-001. Photographs are retained privately and have not been committed to the repository.
+
+## Backup export — 2026-10-31 (later observation)
+
+The author used the TL-SG116E web interface under **System Tools → Backup and Restore → Backup Config** to request a configuration export. Chrome warned about an insecure download; the author chose to retain the intended configuration export from the local HTTP management session. The Save As dialogue showed the destination inside the external SSD under `D:\GOOGLE DRIVE MIRROR\BABY CLOUD PROJECT MASTER\NERV_TLSG116E-SWITCH`.
+
+The author then opened File Explorer at that folder and supplied a photograph displaying one saved file with a name beginning `NERV_TLSG116E_SWITCH_2026-10-31_INI...` and an October 31 modification timestamp. This establishes **local file presence**. The full filename, nonzero byte count, successful remote cloud synchronization, file integrity and ability to restore the configuration are **not independently verified from this screenshot**. The author reports that the parent folder participates in an existing Google Drive mirror, but cloud synchronization was not checked during this step.
+
+**Security and provenance:** The exported switch configuration may contain sensitive settings; keep its raw contents private rather than adding it to the public GitHub repository. This journal entry records the operation, evidence and storage location only. The user performed the operation and captured the evidence; this append was prepared with AI documentation assistance. Later steps: inspect file Properties to verify byte count and full name, confirm backup synchronization if desired, and inspect the remaining switch features without modifying configuration inadvertently.
