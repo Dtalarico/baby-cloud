@@ -119,3 +119,17 @@ The AT&T gateway's photographed manufacturer label identifies the **model as BGW
 - Raspberry Pi power-on/boot: **NOT PERFORMED**.
 
 **Instructional point:** Power-on proves a narrower condition than a functioning network. To verify a switched Ethernet link, later check physical port labels and the upstream gateway's available LAN interface, connect an appropriate cable without disturbing existing service, observe both ends' link indicators, and finally test traffic from an actual endpoint. The author operated the equipment and photographed the results with AI-provided procedural guidance. This entry was drafted with AI assistance.
+
+---
+
+## Observation 6 — First AT&T gateway-to-switch Ethernet link (2026-10-31)
+
+**Evidence:** Two new author-supplied photographs show a black Ethernet patch cable inserted into a yellow LAN socket on the AT&T BGW620-700 gateway and the other end in **port 1** of the TP-Link TL-SG116E. Green link indicators are visibly illuminated at the connection points. The other switch ports shown remain unoccupied.
+
+**Interpretation:** This is positive evidence of an established **physical Ethernet link** between the gateway and switch. It is **not** yet evidence of the negotiated speed, IP addressing, web-management reachability, reliable packet forwarding, or any operational Raspberry Pi node. No switch management interface has been opened in this session.
+
+**Cable length constraint:** The author reports that purchased Cat6 patch cables are **three feet long**, and would have preferred five feet to improve placement flexibility. The author expects the workspace arrangement may improve after removing old Spectrum equipment. Do not claim that equipment has already been disconnected or that new cable purchases are required.
+
+**Next instructional step:** On the Windows management laptop, inspect the active adapter's IPv4 address, subnet mask, and default gateway using `ipconfig` without exposing unrelated personal data. Then discover the TL-SG116E's management address through network observation or the vendor's documented discovery mechanism. Avoid assuming the default management address is reachable or making configuration changes before observing current state.
+
+**Assistance provenance:** Physical installation and photographs were supplied by the project author; AI supplied cabling guidance, interpreted link LEDs, and assisted with this journal entry. The governing documentation policy and previous observations remain unchanged.
