@@ -97,3 +97,25 @@ A Raspberry Pi SD image has a boot partition containing firmware and startup con
 **Status:** Read-only image-build identification **PASS** on the inspected card. OS boot/64-bit status/headless configuration/actual Pi hardware function **NOT VERIFIED**. No user authorization to format, flash or overwrite has been given. Future actions must use explicit device identification, protect the independent Extreme SSD and keep observations separate from assumptions.
 
 **Next stage (not yet performed):** Determine whether to make a non-destructive copy of the supplied image before first boot and verify first-boot behavior; preserve the known-good image when later preparing Raspberry Pi OS Lite as agreed. Teach each step with objective, expected state, actual observed state, and clear safety boundaries.
+
+---
+
+## Observation 5 — Safe media removal and initial network-switch power inspection (2026-10-31)
+
+**Evidence and assistance:** The author reported that Windows displayed its **safe-to-remove** notification after the AI-guided `bootfs (E:)` eject procedure. The USB reader's red indicator stayed illuminated immediately after ejection; this does not by itself establish continued filesystem activity because an indicator may reflect USB bus power. Physical USB disconnection was advised, but its actual completion has not been separately confirmed.
+
+The author then supplied photographs of the **TP-Link TL-SG116E 16-port Gigabit Easy Smart switch**, both its underside and its front, and a photograph of the rear of the existing AT&T fiber gateway. The author reports fitting the switch's rubber feet and connecting its supplied power adapter. In the front photograph, the **green Power LED is visibly illuminated**, and **none of the 16 RJ45 ports has an Ethernet cable inserted**. No physical Ethernet link or packet-forwarding test has occurred, and the switch management interface and firmware have not been inspected.
+
+The AT&T gateway's photographed manufacturer label identifies the **model as BGW620-700**. It shows a mix of differently colored Ethernet sockets. **No cable should be placed based solely on color or appearance**; port labels and current service connections must be checked before changing connections. The photo also contains credentials and other sensitive account/device information; **do not transfer Wi-Fi passwords, gateway access codes, serial numbers, QR codes, or the unredacted photo into this public repository**.
+
+**Power and layout constraint:** The author reports insufficient convenient surge-protected receptacles at present, with the possibility of freeing outlets by later disconnecting legacy Spectrum equipment. The status of that equipment's current use and the available power-strip capacity have **not** been verified. Do not assume it is safe to unplug existing network/power equipment, daisy-chain strips, or exceed a strip's rating.
+
+**Status:**
+- Switch feet fitted: **REPORTED; supported by underside photo**.
+- Switch power indicator illuminated: **VISUALLY VERIFIED**.
+- Connected switch Ethernet links, negotiated speed, packet forwarding, management, and configuration: **NOT TESTED**.
+- AT&T BGW620-700 gateway model: **IDENTIFIED FROM VISIBLE LABEL**.
+- Switch-to-gateway cabling: **NOT PERFORMED**.
+- Raspberry Pi power-on/boot: **NOT PERFORMED**.
+
+**Instructional point:** Power-on proves a narrower condition than a functioning network. To verify a switched Ethernet link, later check physical port labels and the upstream gateway's available LAN interface, connect an appropriate cable without disturbing existing service, observe both ends' link indicators, and finally test traffic from an actual endpoint. The author operated the equipment and photographed the results with AI-provided procedural guidance. This entry was drafted with AI assistance.
