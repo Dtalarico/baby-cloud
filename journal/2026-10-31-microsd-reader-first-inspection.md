@@ -33,3 +33,18 @@ Visually confirm the microSD slot and card alignment without forcing insertion. 
 This is an **in-progress observation**, not a successful hardware commissioning or completed test. Later outcomes should be added as dated, evidence-based observations, preserving this initial uncertainty.
 
 **Governing principle:** The future must know what the past was thinking.
+
+---
+
+## Observation 2 — Card seating and Windows read-only file access (2026-10-31)
+
+**Evidence source:** Author's sequential photographs/screenshots during this commissioning session. Image originals remain with the author and are **not yet present in this repository**; they may be attached to a later evidence manifest. This journal records only what is visible or reported, not full photo provenance.
+
+- The author reported successfully inserting one supplied microSD card into the small Vilros USB reader; a follow-up photograph shows the card in its recessed slot. The user observed that the card fits in only one orientation. Mechanical seating is reported successful; no separate insertion-force measurement was made.
+- The author plugged the reader into the old ASUS VivoBook laptop. A Windows 11 File Explorer screenshot displays **`bootfs (E:)`**, a populated directory listing, and **38 items** indicated in the details pane.
+- Visible file names include **`overlays`**, multiple Raspberry Pi device-tree `.dtb` files, **`bootcode.bin`**, and **`cmdline.txt`**. The visible timestamps include dates in December 2023; these are file timestamps, **not conclusive evidence of OS installation date or release version**.
+- **Verified from screenshot:** Windows can enumerate and read a visible FAT-style Raspberry Pi boot filesystem through the external USB reader. This supports a working USB-port/reader/card read path, but does **not** establish write operation, performance, total microSD capacity, partition scheme, complete Linux root filesystem, installed OS variant, successful Pi boot, or the condition of the laptop's internal SD slot.
+- **Interpretation:** The card is **not blank**; it has Raspberry Pi boot files. A preloaded Pi OS image is plausible, but its exact version and completeness remain unknown.
+- **Safety:** No formatting, initialization, partition deletion, flashing, or writes have been reported. Continue with **read-only Windows Disk Management observation**; cancel any initialize/format prompt and identify the approximately 64 GB removable disk by size/volume before interpreting its partition map.
+
+**Current result:** External reader **PASS for Windows recognition and read access**; bootability and OS contents **UNVERIFIED**. Internal laptop reader **NOT TESTED**. The previous "not tested" lines above remain as the historical state at the time they were written; this dated update records the later evidence.
