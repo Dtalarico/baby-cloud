@@ -44,3 +44,6 @@ Screenshots were reviewed in chat on 2026-11-01. They are not yet attached to th
 - Rationale: searchable hierarchy with an explicit **pre-initial-boot** lifecycle state, distinguishing an untouched supplied image from later operational images.
 - Proposed image filename: `caspar-pre-initial-boot-2026-11-01-v01.img` (proposal only; not yet created).
 - **Status:** destination directory verified by screenshot; full-card image backup NOT YET CREATED or verified.
+
+## Commissioning strategy clarification — 2026-11-01
+**User-approved mission distinction:** Headless first-boot commissioning is a deliberate *learning objective* (SSH, network discovery, remote provisioning, diagnosis), not a hard dependency for the *mission objective* of bringing Caspar online. If headless commissioning is unsuccessful after reasonable troubleshooting, document evidence, lessons, and the decision to fall back to local monitor/keyboard setup; then enable remote administration afterward. Do not let the optional learning path derail operational commissioning. No boot attempt or fallback has yet been performed.
