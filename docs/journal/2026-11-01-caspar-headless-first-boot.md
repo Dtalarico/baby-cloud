@@ -37,3 +37,10 @@ Screenshots were reviewed in chat on 2026-11-01. They are not yet attached to th
 - Disk 2 layout: **512 MB FAT32 `bootfs (E:)`**, **4.93 GB healthy primary partition** (filesystem type not confirmed in Windows), **54.25 GB unallocated**. The unallocated space may reflect an image awaiting first-boot expansion, but that is a hypothesis, not a verified fact.
 - **Disk 1** is `Extreme SSD (D:)`, **931.48 GB exFAT**, with approximately **602.37 GB free**; selected as the proposed image backup destination.
 - Planned backup: create a raw full-device image of Disk 2 on D:, expected to occupy roughly 59.69 GiB before compression. Verify source device identity and destination filename before initiating a read operation. No imaging operation performed yet.
+
+## Backup destination created — 2026-11-01
+- User screenshot verifies a directory on the external SSD: `D:\BABY CLOUD PROJECT\CASPAR PRE-INITIAL BOOT BACKUP\`.
+- This user-chosen naming convention supersedes the earlier proposed `D:\Baby-Cloud-Backups\Caspar\` path. No renaming is needed.
+- Rationale: searchable hierarchy with an explicit **pre-initial-boot** lifecycle state, distinguishing an untouched supplied image from later operational images.
+- Proposed image filename: `caspar-pre-initial-boot-2026-11-01-v01.img` (proposal only; not yet created).
+- **Status:** destination directory verified by screenshot; full-card image backup NOT YET CREATED or verified.
