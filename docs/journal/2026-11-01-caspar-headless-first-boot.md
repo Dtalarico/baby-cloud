@@ -147,3 +147,55 @@ PowerShell displayed the first-connection SSH warning: **“The authenticity of 
 
 ### Engineering-documentation principle
 The author explicitly reaffirmed: **Baby Cloud is a learning journal as much as a capstone infrastructure project.** Preserve not just final working commands but the questions, wrong assumptions, troubleshooting decisions, corrected understanding, and boundaries of verification. Never record login passwords. Do not declare SSH commissioning complete until an authenticated remote shell is observed.
+
+
+## 2026-11-02 — Authenticated SSH, CASPER-01 naming, and first visible remote-console demonstration
+
+**Status: SSH REMOTE LOGIN VERIFIED; hostname change VERIFIED; remote console display change OBSERVED.** This dated entry supersedes the earlier pending checkpoints without rewriting them. Evidence consists of author-reported actions and screenshots reviewed during the session.
+
+### SSH connection and authentication — REAPER-ONE-PC to Raspberry Pi
+- Windows SSH client connected to `192.168.1.76` with `ssh david-talarico@192.168.1.76`.
+- The author accepted the first-use ED25519 host key; Windows reported the host was permanently added to known hosts. The first attempt immediately after host-key acceptance closed on port 22; repeating the **same SSH command** reached the password prompt. The author insisted on repeating the simplest previously known command before escalating troubleshooting, a successful diagnostic choice.
+- A first password entry returned `Permission denied, please try again`; a subsequent entry succeeded. The remote Debian GNU/Linux login banner and shell prompt `david-talarico@raspberrypi:~ $` were visible. This is verified **authenticated SSH access**, not merely network reachability. No passwords or private keys are recorded.
+- SSH host-key acceptance is a trust-on-first-use action, not proof that the key was independently verified. Future professional practice: compare against a trusted fingerprint source when available.
+
+### First remote administrative configuration — hostname
+- From the authenticated remote Linux shell, the author executed:
+  ```bash
+  sudo hostnamectl set-hostname CASPER-01
+  hostnamectl
+  ```
+- Screenshot of `hostnamectl` showed `Static hostname: CASPER-01`, Debian GNU/Linux 12 (bookworm), kernel `6.12.109+rpt-rpi-v8`, and `arm64` architecture. A later `hostname` command independently printed `CASPER-01`.
+- The existing shell prompt continued to display `raspberrypi` in that session; the prompt is not the authoritative test of the updated hostname. Later `sudo` commands produced `sudo: unable to resolve host CASPER-01: Name or service not known`. **Outstanding issue:** investigate local hostname resolution (e.g., `/etc/hosts`) during a future session; the warning did not prevent the observed commands from running.
+- Naming decision: **CASPER-01** is the applied, author-selected system hostname, even though earlier historical journal filenames and design references used *Caspar*. Preserve historical naming as written; append clarifying decisions rather than silently editing old records.
+
+### Demonstration objective and failed attempts
+**Actual user-defined objective:** Type commands on REAPER-ONE-PC and produce an unmistakably visible effect on the separate television physically connected to CASPER-01, to demonstrate remote control to Maggie. Merely displaying output in the SSH client's laptop terminal does **not** meet this objective.
+
+The assistant repeatedly failed to keep that objective in focus, proposing unnecessarily complex or unsuitable commands. Preserve this as a process failure and teaching lesson:
+- A proposed `DISPLAY=:0 notify-send ...` command was malformed/incorrectly entered and yielded `-bash: notify-send: command not found`; `which notify-send` returned no path. The author installed Debian package `libnotify-bin` using `sudo apt install libnotify-bin`.
+- A later notification attempt using `DISPLAY=:0` and `DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/$(id -u)/bus` executed `notify-send` but returned `org.freedesktop.DBus.Error.ServiceUnknown`: the `org.freedesktop.Notifications` service was not provided by any service file. **Do not claim the notification appeared.** Installing the CLI did not establish that a desktop notification service was available.
+- An earlier `wall` broadcast visibly appeared in the SSH terminal and `who` showed the local console session and remote session from `192.168.1.64`; however, this did not meet the requested physical-TV demonstration.
+- `echo $XDG_SESSION_TYPE` returned `tty` within the SSH shell. The author learned that an SSH terminal session is not automatically attached to the desktop graphical session.
+- The assistant should have established a testable visual acceptance criterion first, checked installed utilities and the actual session environment, and chosen the simplest viable mechanism. The author explicitly requested a repeatable **discovery and troubleshooting method**, not only ready-made commands.
+
+### Successful physical-console demonstration
+From the authenticated SSH session on REAPER-ONE-PC, the author ran:
+```bash
+sudo sh -c 'echo "HELLO MAGGIE! BABY CLOUD IS ALIVE!" > /dev/tty1; chvt 1'
+```
+- This writes text to the Raspberry Pi's first virtual console (`/dev/tty1`) and switches the Pi's active physical virtual terminal to console 1 (`chvt 1`). A photograph showed the television changed from the graphical desktop to a black text-console display. **Physical display switching was observed**; the photograph was taken from a distance, so exact legibility of every displayed line was not independently confirmed.
+- The author then **independently modified and repeated** the same working command with a personalized affectionate message to Maggie, retaining the redirection and `chvt 1` mechanism. Screenshot showed the modified command returned to the remote shell prompt, again with the nonfatal hostname-resolution warning. This is an important progression from copying a command to adapting it.
+- A virtual console is not a desktop popup. Remote SSH commands run on CASPER-01, but their output normally returns to the SSH client; explicit redirection or control of the remote display is needed to affect the TV.
+- **Future restoration consideration:** The command switched the Pi away from its graphical desktop; a future session should determine the active graphical virtual terminal before switching back. Do not assume a specific VT number without checking.
+
+### Learning objectives and professional practice to retain
+1. Begin with a plain-language acceptance criterion: what observable result counts as success, and **where** must it appear?
+2. Distinguish client-side output, remote shell execution, remote text consoles, and the remote graphical desktop.
+3. Investigate tool availability with `command -v <name>` or `which <name>`, identify the supplying package, and verify the relevant background service before relying on it.
+4. Treat error text as diagnostic evidence: `command not found` (tool unavailable), `ServiceUnknown` (D-Bus service unavailable), and `unable to resolve host` (local name-resolution issue) point to different subsystems.
+5. Explain **how an administrator would discover a command**, consult documentation, choose the least-complex test, interpret its output, and escalate only if necessary.
+6. Maintain append-only chronology with observed facts separated from assumptions, attempts from successes, and unresolved follow-ups from completed work.
+7. Record this session as both an infrastructure milestone and a learning milestone: first authenticated remote administration, first verified hostname change, first remote-induced physical display change, and first independent adaptation of a successful remote-display command.
+
+**End-of-night checkpoint:** CASPER-01 remotely accessible over SSH at last verified test; hostname configured; remote physical display control demonstrated. Follow-up tasks (not completed): investigate hostname resolution, restore/check graphical display state as needed, and develop a reproducible remote desktop/notification method only if genuinely required. No credentials are committed.
