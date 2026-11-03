@@ -23,3 +23,8 @@ Configure the intended hostname and continue hardening and node provisioning in 
 **Naming discrepancy to resolve:** The canonical node name in the repository is **Casper-1** (normally `casper-1` as a lowercase Linux hostname), whereas the actual configured static hostname shown is **`CASPER-01`** (uppercase and zero-padded). Preserve this observation; do not silently normalize or claim that the desired canonical hostname is already configured. A follow-up deliberate correction and verification is pending.
 
 **Learning milestone:** This was the first verified administrative change to the Raspberry Pi performed remotely through SSH, rather than using its directly attached keyboard and screen. The author explicitly requested the result be recorded in the engineering and learning journal.
+
+
+## 2026-11-02 — Author's naming decision (append-only correction)
+
+Following successful remote execution of `sudo hostnamectl set-hostname CASPER-01` and verification showing `Static hostname: CASPER-01`, the author explicitly chose to **retain the actual configured name `CASPER-01`** and have repository documentation reflect the name he gave the machine. The previously proposed `Casper-1` naming convention is therefore superseded **for this first node**, not silently erased. This note records the author's decision; existing README and earlier naming-decision text may still show the old convention until separately updated with explicit historical annotations. The first node's hostname should not be changed merely to conform to the older proposal.
