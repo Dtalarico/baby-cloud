@@ -47,3 +47,32 @@ Screenshots were reviewed in chat on 2026-11-01. They are not yet attached to th
 
 ## Commissioning strategy clarification — 2026-11-01
 **User-approved mission distinction:** Headless first-boot commissioning is a deliberate *learning objective* (SSH, network discovery, remote provisioning, diagnosis), not a hard dependency for the *mission objective* of bringing Caspar online. If headless commissioning is unsuccessful after reasonable troubleshooting, document evidence, lessons, and the decision to fall back to local monitor/keyboard setup; then enable remote administration afterward. Do not let the optional learning path derail operational commissioning. No boot attempt or fallback has yet been performed.
+
+
+## 2026-11-02 — First powered boot, Ethernet reachability, and SSH diagnostic
+
+**Status:** Raspberry Pi OS boot and network reachability OBSERVED; SSH login NOT ACHIEVED. This is a dated update to earlier pending statuses, not a rewrite of the November 1 observations.
+
+### Backup evidence and accepted risk
+- Author confirmed the backup was made using **Win32 Disk Imager**. Windows Properties screenshot showed the individual file `CASPAR_2026-11-01_PRE-INITIAL-BOOT.img`, type Disc Image File (`.img`), under `D:\BABY CLOUD PROJECT\CASPAR PRE-INITIAL BOOT BACKUP\`, size **64,088,965,120 bytes**, created November 1 at 1:46 PM and modified at 3:29 PM. The screenshot establishes the file's identity, size, and presence, **not** a byte-for-byte verified recovery image.
+- Author explicitly chose to proceed with initial boot without completing backup integrity verification, accepting that risk. No image restoration or card reflash was reported.
+
+### First boot and power troubleshooting
+- Initial attempts showed no visible status indication, switch-port link light, or TV signal. The author traced this to **lack of power from the initially used surge protector/power source**; changing to a working power connection resolved the problem. **Do not classify the Pi or Vilros kit as defective.**
+- Casper-1 subsequently displayed **Welcome to Raspberry Pi Desktop**, with first-boot activity and spoken screen-reader/accessibility prompts. This is observed evidence of a bootable OS and functional video output; completion of the first-run wizard and creation of login credentials remain **UNVERIFIED**.
+- A TV was temporarily connected for diagnostics. The author prefers eventual **headless SSH administration** and deferred further local keyboard setup until ready.
+
+### Network and SSH observations
+- AT&T gateway device list screenshot identified hostname **`raspberrypi`**, DHCP IPv4 **`192.168.1.76`**, status **on**, **Ethernet LAN-3**, negotiated **1000 Mbps full duplex**. This is consistent with the path through the already commissioned NERV switch, but is not a direct measurement of every intermediate link.
+- NERV switch remained visible separately as `NERV_TL-SG116E_SWITCH` at `192.168.1.74`.
+- From Windows laptop **REAPER-ONE-PC** (`192.168.1.64`, Wi-Fi), the author ran:
+  ```powershell
+  Test-NetConnection 192.168.1.76 -Port 22
+  ```
+  Screenshot showed **`PingSucceeded : True`**, **`PingReplyDetails (RTT) : 3 ms`**, **`TcpTestSucceeded : False`** and warning that TCP connection to port 22 failed. This verifies IP reachability and that TCP/22 was **not reachable at test time**; it does not by itself prove the exact cause (SSH disabled, setup incomplete, or other).
+- Earlier boot-partition inspection found no `ssh`/`ssh.txt` marker and no `userconf` file. No marker creation, SSH enablement, successful authentication, or remote shell is reported.
+
+### Decision, next checkpoint, and documentation boundary
+- **Author's revised near-term plan:** prioritize getting Casper-1 through local first-run setup using TV/keyboard when ready; return to enabling SSH and headless login in a subsequent session. **Deliverable still open:** successful SSH login from REAPER-ONE-PC.
+- The assistant's earlier focus on backup verification delayed the opportunity to prepare SSH and account provisioning before first boot. Record this as a workflow lesson; avoid treating the backup screenshot as proof of integrity or the absent marker as definitive proof of SSH service state.
+- All evidence here is based on author statements and screenshots in conversation; original image and screenshots are not committed to the public repository. No passwords or credentials are recorded.
