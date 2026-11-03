@@ -116,3 +116,34 @@ Screenshots were reviewed in chat on 2026-11-01. They are not yet attached to th
 The author emphasized that the primary practical skill is **discovering and administering a remote host from another workstation**, not simply checking its services while physically present. Continue with the first SSH connection from REAPER-ONE-PC; inspect and verify the initial host-key prompt as appropriate, authenticate, and record observed command output before declaring remote commissioning complete. The author wishes to stop for the night after the first successful SSH login.
 
 **Documentation principle:** Record the author's *questions and reasoning* alongside commands, failures, and verified results. Preserve earlier chronological entries without retroactively rewriting their historical status.
+
+
+## 2026-11-02 — First SSH connection: troubleshooting, host-key trust, and learning journal
+
+**Observed checkpoint:** On Windows REAPER-ONE-PC, the author attempted SSH to the Raspberry Pi at `192.168.1.76`. An initial command-entry typo placed an extra digit in the IP address (`1912.168.1.76` instead of `192.168.1.76`), causing a `Could not resolve hostname ... No such host is known` error. The author recognized this as human error after examining the command and error message. This was **not** evidence of a Raspberry Pi service or network failure.
+
+After correcting the command to:
+```powershell
+ssh david-talarico@192.168.1.76
+```
+PowerShell displayed the first-connection SSH warning: **“The authenticity of host '192.168.1.76' can't be established”**, an ED25519 host-key fingerprint, and **`Are you sure you want to continue connecting (yes/no/[fingerprint])?`**. This is evidence that an SSH-speaking endpoint at that address responded and presented a host key. **No host-key acceptance, password authentication, or remote shell success has yet been reported.**
+
+### Author's instructional questions and reasoning
+- What does the `yes/no/[fingerprint]` prompt mean? Is `fingerprint` a third choice?
+- What is a cryptographic host-key fingerprint, and why would an administrator compare it?
+- If I have never accessed a remote machine before, **how would I know its fingerprint?**
+- In a legitimate IT operation, would a trusted fingerprint or verification mechanism be provided?
+- Why should I, as the person initiating an SSH session, worry about the identity of the *remote* machine? The author initially viewed the client as the active party and the remote computer as passive, reflecting a security-testing mindset.
+- How can the process be explained clearly without burying the practical lesson under advanced terminology?
+
+### Lessons distilled
+1. The SSH host-key fingerprint is a compact identifier derived from the server's public host key. It is **not a password** and does not authenticate the human user.
+2. The first-connection prompt offers `yes` (accept/store presented host key), `no` (reject), or the **actual fingerprint value** (not the literal word `fingerprint`) to confirm the displayed key.
+3. Reading the fingerprint **from the same unverified SSH connection** does not independently establish the server's identity. A trusted second source is needed for stronger verification: local console, trusted provisioning record, provider management console, or trusted administrative channel.
+4. A legitimate first-time connection may not have a preexisting trusted fingerprint record; a professional process should establish a trustworthy verification method or explicitly accept a trust-on-first-use decision.
+5. The risk to the connecting administrator is an **impostor server**: a redirected connection could solicit credentials, mislead command execution, or receive data intended for the legitimate host. Host-key checking is about ensuring the *client* connects to the intended server; it is separate from the server checking the user's login credentials.
+6. The author expressed comfort accepting the presented key on this self-controlled home network after the explanation. This is **an intention**, not yet evidence that `yes` was entered.
+7. The Linux hostname remains `raspberrypi`; **Casper-1** is the planned node name and has not yet been applied as a hostname.
+
+### Engineering-documentation principle
+The author explicitly reaffirmed: **Baby Cloud is a learning journal as much as a capstone infrastructure project.** Preserve not just final working commands but the questions, wrong assumptions, troubleshooting decisions, corrected understanding, and boundaries of verification. Never record login passwords. Do not declare SSH commissioning complete until an authenticated remote shell is observed.
