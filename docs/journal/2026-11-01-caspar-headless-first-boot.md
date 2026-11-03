@@ -76,3 +76,20 @@ Screenshots were reviewed in chat on 2026-11-01. They are not yet attached to th
 - **Author's revised near-term plan:** prioritize getting Casper-1 through local first-run setup using TV/keyboard when ready; return to enabling SSH and headless login in a subsequent session. **Deliverable still open:** successful SSH login from REAPER-ONE-PC.
 - The assistant's earlier focus on backup verification delayed the opportunity to prepare SSH and account provisioning before first boot. Record this as a workflow lesson; avoid treating the backup screenshot as proof of integrity or the absent marker as definitive proof of SSH service state.
 - All evidence here is based on author statements and screenshots in conversation; original image and screenshots are not committed to the public repository. No passwords or credentials are recorded.
+
+
+## 2026-11-02 — Local first-run account setup and update progress (later session)
+
+**Status:** Local provisioning progressed through first-run wizard; updates IN PROGRESS at last report. SSH activation and remote login remain UNVERIFIED.
+
+- Author connected a USB keyboard and used the TV to complete the Raspberry Pi OS first-run wizard instead of continuing to attempt headless-first provisioning. This was an explicit pragmatic fallback: get the first node operational, then apply the lessons to a planned headless setup of Balthasar-2.
+- First-run **Set Country** screen showed United States, American English, Eastern time zone, and US keyboard selection.
+- First-run **Create User** screen was reached. Author chose a familiar local username and password to avoid losing access. **No username was independently verified in this log and no password is recorded.** Do not commit credentials, even if provided in conversation.
+- Wi-Fi setup was **skipped intentionally** because wired Ethernet through NERV was already functioning.
+- Browser-selection screen was reached. Author chose **Firefox** as preferred browser; earlier discussion favored keeping Chromium installed as a compatibility fallback. Final browser removal state was not independently verified.
+- The first-run wizard began installing software updates. Author repeatedly reported that the progress bar **continued moving**, though slowly. Completion and reboot were **not yet reported**.
+- Working hypothesis: the supplied Samsung 64 GB microSD's random-write performance may contribute to lengthy package installation. This was **not measured**; no I/O, thermal, or network bottleneck was established.
+- Future design preference stated by author: move the operating system to a **dedicated USB 3.0 SSD per node** when appropriate, then compare performance and retain an appropriate recovery path. This is a **proposal**, not implemented or approved procurement.
+- Scope discipline: author prioritizes making nodes available as remotely administered Linux infrastructure, not hobbyist hardware assembly. Preassembled Vilros cases/heatsinks were deliberately chosen to avoid unnecessary tinkering.
+- Engineering lesson: preserve intended-versus-observed state, document first-node friction, and use that knowledge to provision the next node more efficiently. Avoid claiming SSH works until a successful remote shell is observed.
+- Conversation continuity note: author reported a phone conversation display issue, recovered the thread using the computer, and requested this repository update to preserve the operational checkpoint.
