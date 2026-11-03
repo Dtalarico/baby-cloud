@@ -21,3 +21,8 @@ These are **planned human-readable node labels**, not evidence of configured DNS
 
 ## Documentation actions
 The conceptual topology diagram and README now use the corrected planned labels. The October 23 journal retains its original list and includes a forward-dated correction. The project author's correction and decisions were recorded with AI drafting assistance.
+
+
+## 2026-11-02 — Commissioning addendum: actual first-node hostname
+
+The convention above records the earlier approved **planned** labels and is preserved unchanged as historical decision context. On November 2, the author connected remotely to the first Raspberry Pi over SSH from REAPER-ONE-PC and ran `sudo hostnamectl set-hostname CASPER-01`. A subsequent `hostnamectl` displayed **`Static hostname: CASPER-01`**, verifying the configured hostname. The author explicitly decided to retain **`CASPER-01`** (uppercase, zero-padded), rather than change the host to match the prior proposed **Casper-1** label. Thus **`CASPER-01` is the first node's author-selected operational hostname**. This addendum supersedes the first-node planned spelling/format for current operations, without erasing the original record. No change to the remaining planned MAGI names is implied.
