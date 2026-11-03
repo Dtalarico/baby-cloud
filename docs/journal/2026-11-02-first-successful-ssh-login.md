@@ -14,3 +14,12 @@ The author explicitly prefers systematic, minimal troubleshooting: repeat the si
 
 ## Next tasks
 Configure the intended hostname and continue hardening and node provisioning in later sessions. The initial SSH commissioning objective is achieved.
+
+
+## 2026-11-02 — First remote administrative change: hostname
+
+**Observed evidence:** From the authenticated SSH session on REAPER-ONE-PC, the author executed `sudo hostnamectl set-hostname CASPER-01` and then `hostnamectl`. The output explicitly displayed `Static hostname: CASPER-01`, confirming the system hostname change. The same output identified Debian GNU/Linux 12 (bookworm), Linux kernel 6.12.109+rpt-rpi-v8, and arm64 architecture. The shell prompt continued to display `david-talarico@raspberrypi:~ $` in the existing session; this is not evidence that the static hostname change failed.
+
+**Naming discrepancy to resolve:** The canonical node name in the repository is **Casper-1** (normally `casper-1` as a lowercase Linux hostname), whereas the actual configured static hostname shown is **`CASPER-01`** (uppercase and zero-padded). Preserve this observation; do not silently normalize or claim that the desired canonical hostname is already configured. A follow-up deliberate correction and verification is pending.
+
+**Learning milestone:** This was the first verified administrative change to the Raspberry Pi performed remotely through SSH, rather than using its directly attached keyboard and screen. The author explicitly requested the result be recorded in the engineering and learning journal.
