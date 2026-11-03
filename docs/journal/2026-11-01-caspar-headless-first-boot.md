@@ -93,3 +93,26 @@ Screenshots were reviewed in chat on 2026-11-01. They are not yet attached to th
 - Scope discipline: author prioritizes making nodes available as remotely administered Linux infrastructure, not hobbyist hardware assembly. Preassembled Vilros cases/heatsinks were deliberately chosen to avoid unnecessary tinkering.
 - Engineering lesson: preserve intended-versus-observed state, document first-node friction, and use that knowledge to provision the next node more efficiently. Avoid claiming SSH works until a successful remote shell is observed.
 - Conversation continuity note: author reported a phone conversation display issue, recovered the thread using the computer, and requested this repository update to preserve the operational checkpoint.
+
+
+## 2026-11-02 — SSH enabled; administrator learning questions and remote-discovery objective
+
+**Latest observed status:** The author reports that Raspberry Pi OS `raspi-config` displayed **“The SSH server is enabled”** after selecting Interface Options → SSH → Yes. This confirms the configuration utility's success message, **not yet a verified remote TCP connection or authenticated SSH session**. First-run OS updates finished, the machine rebooted, the desktop became available, and the author changed the compositor from Wayfire to Labwc as prompted. The local Linux terminal displayed `david-talarico@raspberrypi:~ $`. The machine is still using the hostname `raspberrypi` at this checkpoint; Casper-1 is the intended node identity.
+
+### Questions raised by the author (preserve as instructional requirements)
+1. **How would I independently discover that SSH uses TCP port 22, rather than relying on being told or memorizing it?**
+2. **How would I discover the ports/services exposed by Casper-1 from REAPER-ONE-PC, without physically accessing Casper-1 or already knowing which port to probe?**
+3. **What is the difference between a service listening locally and that service being reachable from another computer?**
+4. **How do I learn practical diagnostic methods rather than merely following a predetermined command sequence?**
+
+### Teaching and diagnostic methods discussed (examples, not claimed as executed)
+- Local service-name registry: `grep '^ssh[[:space:]]' /etc/services` — indicates the *conventional* SSH port, not necessarily the actual listening port.
+- Local Linux socket inspection: `sudo ss -tlnp` — shows listening TCP sockets and, with privileges, associated processes. The author understood this but deliberately deferred local inspection to prioritize remote administration.
+- Remote Windows reachability test: `Test-NetConnection 192.168.1.76 -Port 22` — tests a **specified** TCP port; earlier result was `TcpTestSucceeded: False` **before** SSH enablement. No post-enablement result has yet been observed.
+- Remote discovery tool discussed: `nmap -sV 192.168.1.76` — when Nmap is installed, scans common TCP ports and attempts service identification; **not executed or confirmed installed**.
+- Intended remote login from REAPER-ONE-PC: `ssh david-talarico@192.168.1.76` — **not yet reported as executed successfully**. Passwords must never be committed.
+
+### Learning objective and next verification
+The author emphasized that the primary practical skill is **discovering and administering a remote host from another workstation**, not simply checking its services while physically present. Continue with the first SSH connection from REAPER-ONE-PC; inspect and verify the initial host-key prompt as appropriate, authenticate, and record observed command output before declaring remote commissioning complete. The author wishes to stop for the night after the first successful SSH login.
+
+**Documentation principle:** Record the author's *questions and reasoning* alongside commands, failures, and verified results. Preserve earlier chronological entries without retroactively rewriting their historical status.
