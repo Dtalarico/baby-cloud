@@ -43,3 +43,16 @@ This document is a continuity-only addition. No hardware command was run, no con
 **Next exact task / prerequisites / approval gate:**
 
 **Author and assistance provenance:**
+
+
+---
+
+## Mandatory complete-repository archival reading gate — 2026-11-02
+
+**Status: Author-directed, mandatory.** Before **each new Baby Cloud work session or resumption of engineering operations**, the assistant must obtain a fresh inventory of the current repository and read **every current file in full**, including README, continuity, documentation policy, architecture, decisions, procurement, journals, scripts, and diagram source files. This is an **archival reading of the repository**, not a selective retrieval, summary, cached memory, or assumption that earlier reading remains current. Read through the GitHub connection; **do not clone the repository** merely to satisfy this requirement.
+
+**Auditable completion gate:** Record the repository/ref or commit inspected, the complete path inventory, which files were successfully read, and any inaccessible, binary, oversized, or otherwise unreviewable content. For nontext files, inspect their metadata and contents using a suitable supported method and explicitly distinguish what was and was not inspected. **Do not claim “entire repository read” unless the inventory and every file have been accounted for.** If the tool cannot provide a reliable complete inventory or a file cannot be inspected, mark the archival gate **INCOMPLETE**, disclose the exact limitation, and do not proceed with engineering instructions or changes until the author resolves the gate or explicitly approves a narrower exception. The author must not have to audit the assistant to discover omitted files.
+
+**Operational discipline:** After the reading gate passes, reconcile historical documentation with the latest author-provided evidence; distinguish PROPOSED, APPROVED, EXECUTED, and VERIFIED. Before a hardware, storage, networking, or Git write, identify the exact target, risk, rollback/recovery path, expected evidence, and approval. Never infer integrity or successful execution from a filename, folder size, screenshot, or prior assistant statement alone. Preserve history by dated, additive corrections. Re-run this archival gate at the next session even if it passed previously.
+
+**Reason for this rule:** On 2026-11-02 the assistant repeatedly proceeded with Casper-1 backup guidance without being able to certify a complete current-file inventory and full archival reading, forcing the author to audit the assistant. This is a documented process failure, **not** proof of damage to the microSD or backup. The user-reported raw backup exists; the photographed backup **folder** contained one file totaling 64,088,965,120 bytes, consistent with but not proof of a valid full-card image. Individual image identity, readability, and source fidelity remain **UNVERIFIED**. Do not repeat the same incomplete review as a completed prerequisite.
