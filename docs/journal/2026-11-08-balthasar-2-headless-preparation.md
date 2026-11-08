@@ -254,3 +254,12 @@ This matches the image identification recorded on CASPER-01's original card, but
 **USER-SUPPLIED TERMINAL PHOTO / EXECUTED:** While checking whether `userconf.txt` existed on WSL-mounted `bootfs` at `/mnt/e`, the author attempted a Bash `test ! -e ...` expression combined with `&& echo`, but typed a space between `/mnt/e` and `userconf.txt` rather than the required `/` path separator. Bash responded `-bash: test: /mnt/e: binary operator expected`. This was a **command-argument syntax error**, NOT a reliable indication that `userconf.txt` exists or does not exist. The author recognized an error and asked to identify the specific cause, while recalling prior learning about `$?` and shell command exit codes.
 
 **NEXT READ-ONLY STEP:** Run `test ! -e /mnt/e/userconf.txt` (one complete path argument), then immediately `echo $?`; status 0 means the file does not exist; 1 means it exists. The correct path and status have NOT yet been executed/observed, so do not assert that the provisioning file is absent or present. Continue one command at a time before writing account credentials. No secret values should appear in the public repository.
+
+
+## 2026-11-08 — userconf.txt absence verified prior to creation
+
+**USER-SUPPLIED TERMINAL PHOTO / EXECUTED:** The author corrected the earlier path-separator error and ran `test ! -e /mnt/e/userconf.txt && echo "Ready : file does not exist"` from the Ubuntu WSL shell. The terminal printed **`Ready : file does not exist`**, establishing successful evaluation of the file-absence condition for the WSL-mounted E: boot partition at that moment. The `test` expression exits with code 0 when `userconf.txt` does not exist, allowing the `&&` echo command to execute. This is a READ-ONLY test, not account creation.
+
+**LEARNING:** The author initially requested direct exit-code interpretation and noticed phone display wrapping was causing path separator confusion. After correcting the single path argument, the author used the conditional `&&` form to confirm absence. Record accurate supported skill evidence rather than attributing independent command design.
+
+**NEXT (NOT YET EXECUTED):** Securely collect a locally typed initial password without echo, build `userconf.txt` with username `david-talarico` and SHA-512-crypt hash without displaying either password or hash in screenshots or logs, verify file presence and structure safely, clear temporary secret variables, and safely eject before first boot. No password/hash is to be committed.
