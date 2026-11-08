@@ -29,3 +29,10 @@ Prepare the second Raspberry Pi 4 4 GB Baby Cloud node, provisionally named Balt
 
 ## Authorship and assistance
 The author supplied physical state and explicit preservation/documentation decisions. Assistant performed the connected GitHub archival review and drafted this engineering note. Device inspection beyond the mounted volume label remains author-led and unverified.
+
+
+## 2026-11-08 — Read-only bootfs file-presence check
+
+**AUTHOR-REPORTED WINDOWS OBSERVATION:** At mounted `bootfs (E:)` for presumed BALTHASAR-2 microSD, `issue.txt` is present; no file named `ssh` is visible; the author also reports no `user.conf.txt` (spoken filename). The expected Raspberry Pi first-user configuration file convention is **`userconf.txt` (no dot between `user` and `conf`)**; confirm the precise filename when reviewing the directory. These are file-presence observations, not proof that SSH is disabled or that no user exists. No file contents were provided.
+
+**NEXT READ-ONLY CHECK:** Open `issue.txt` and report its nonsecret image-identification text. Confirm that `userconf.txt` (exact spelling) is absent. Before writes, positively verify removable disk identity; no microSD modifications have occurred in this session.
