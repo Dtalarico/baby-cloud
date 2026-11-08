@@ -127,3 +127,10 @@ This matches the image identification recorded on CASPER-01's original card, but
 **Author's observation/learning:** The author distinguished Windows `E:` (drive letter) from Linux `/mnt/e` (case-sensitive chosen mount-point path), and noted that Ubuntu WSL's colored Bash prompt and output are appealing, particularly the green text. The color scheme is a terminal/shell presentation feature, not evidence of drive mounting.
 
 **NEXT:** Mount only the verified Windows `E:` volume at `/mnt/e` via WSL DrvFs, then inspect `issue.txt` read-only to confirm the mounted target before creating `userconf.txt`.
+
+
+## 2026-11-08 — WSL DrvFs E: mount command succeeded (author report)
+
+**EXECUTED, AUTHOR-REPORTED:** The author entered `sudo mount -t drvfs E: /mnt/e` in Ubuntu WSL and reports that it completed successfully without error. The prior step created the `/mnt/e` mount-point directory. This is evidence that the DrvFs mount command returned successfully, but **not yet independent verification** that the desired microSD contents are accessible or that the mounted target is correct. It did not intentionally reformat or modify the card's partitions.
+
+**NEXT READ-ONLY VERIFICATION:** Run `ls /mnt/e` in Ubuntu and check for the expected Raspberry Pi OS boot files, especially `issue.txt` and the previously created empty `ssh` marker. Distinguish an accessible directory from proven correct target by checking familiar file contents. Do not write `userconf.txt` until the target and credential provisioning approach have been verified. No passwords or hashes are committed.
