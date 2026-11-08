@@ -247,3 +247,10 @@ This matches the image identification recorded on CASPER-01's original card, but
 **LEARNING EVIDENCE / AUTHOR ASSESSMENT:** Before executing, the author independently explained that `ls -l` was showing long-format listings of two named files, recognized the two path arguments, and reported being able to follow the purpose of commands more effectively than six months earlier. The author explicitly distinguishes guided comprehension from being able to devise the command unaided. Preserve this honest progression rather than overstating independence.
 
 **NEXT:** Safely prepare `userconf.txt` with the approved, consistent cross-node username `david-talarico` and a locally generated SHA-512-crypt password hash. Avoid exposing the secret or hash in chat, terminal screenshots or public GitHub; first boot still pending.
+
+
+## 2026-11-08 — First-user provisioning file existence test: path syntax diagnosis
+
+**USER-SUPPLIED TERMINAL PHOTO / EXECUTED:** While checking whether `userconf.txt` existed on WSL-mounted `bootfs` at `/mnt/e`, the author attempted a Bash `test ! -e ...` expression combined with `&& echo`, but typed a space between `/mnt/e` and `userconf.txt` rather than the required `/` path separator. Bash responded `-bash: test: /mnt/e: binary operator expected`. This was a **command-argument syntax error**, NOT a reliable indication that `userconf.txt` exists or does not exist. The author recognized an error and asked to identify the specific cause, while recalling prior learning about `$?` and shell command exit codes.
+
+**NEXT READ-ONLY STEP:** Run `test ! -e /mnt/e/userconf.txt` (one complete path argument), then immediately `echo $?`; status 0 means the file does not exist; 1 means it exists. The correct path and status have NOT yet been executed/observed, so do not assert that the provisioning file is absent or present. Continue one command at a time before writing account credentials. No secret values should appear in the public repository.
