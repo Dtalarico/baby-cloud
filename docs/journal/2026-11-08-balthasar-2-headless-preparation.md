@@ -93,3 +93,12 @@ This matches the image identification recorded on CASPER-01's original card, but
 **Learning discussion (not a device operation):** Author recognized that WSL 2 Ubuntu's `/home/<linux-user>` is a logical path within the Linux ext4 filesystem, whose actual bytes typically reside in a Windows-hosted virtual disk (`ext4.vhdx`). The Windows `\\wsl$\\Ubuntu-24.04\\` network-style path exposes Linux files without navigating to the backing VHDX, while `/mnt/c` exposes the Windows C: filesystem inside Linux. The author noted that locating the backing storage directly would be cumbersome without this abstraction. The actual value of `$HOME` on this computer has not yet been observed and should not be assumed from the example prompt.
 
 **NEXT READ-ONLY COMMAND (requested):** Run `openssl version` in the already-open Ubuntu WSL shell to confirm whether a suitable OpenSSL executable is available for local, private password-hash generation. Expected output begins with the OpenSSL version and does not modify the microSD or generate credentials. Record the reported version before moving to first-user provisioning. No credential/hash is to be sent in chat or committed to GitHub.
+
+
+## 2026-11-08 — OpenSSL availability verified in Ubuntu WSL
+
+**AUTHOR-REPORTED OBSERVATION:** In Ubuntu 24.04 under WSL 2, `openssl version` returned an OpenSSL **3.0.13** command-line version dated January 2024, with parenthetical **Library: OpenSSL 3.0.13**. The author specifically observed that the version string appeared twice, once labeling the linked cryptographic library. Exact date formatting is a speech transcription and has not been independently captured.
+
+**INTERPRETATION:** The OpenSSL executable is available in Ubuntu and reports the matching runtime library version. This enables local password-hash generation; it does not establish that the hash or a `userconf.txt` file has yet been generated.
+
+**NEXT APPROVED GUIDED STEP:** Run `openssl passwd -6` interactively inside Ubuntu WSL to produce a SHA-512-crypt password hash (`$6$...`) without placing the plaintext password in shell history or sharing either plaintext password or generated hash with the assistant. Confirm only presence and `$6$` prefix; follow-up will safely write a single `username:hash` line to `bootfs (E:)/userconf.txt` and verify it locally. No credential should be committed to public GitHub.
