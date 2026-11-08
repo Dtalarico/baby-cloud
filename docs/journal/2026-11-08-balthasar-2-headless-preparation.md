@@ -118,3 +118,12 @@ This matches the image identification recorded on CASPER-01's original card, but
 **AUTHOR-SUPPLIED TERMINAL PHOTOGRAPH:** From WSL Ubuntu home directory the author ran `ls -ld /mnt/e` and received `ls: cannot access '/mnt/e': No such file or directory`. This establishes that the expected WSL mount point `/mnt/e` was absent at the time, **not** that the underlying Windows E: microSD card is inaccessible or defective. Earlier Windows File Explorer/Disk Management inspections successfully read the card's bootfs partition. Author asked the conceptual distinction between hashing and encryption; assistant clarified one-way password verification, salt and `$6$` SHA-512-crypt method identifier.
 
 **NEXT:** Prefer lowest-risk route to prepare Node 2 `userconf.txt`, possibly explicitly mount removable Windows E: under WSL using drvfs if supported, or use Windows PowerShell without exposing secrets. Any mount must target only verified E: and avoid changing partitions. SSH marker is present; `userconf.txt` is not yet created, and no first boot or SSH connection is verified. Public repo must not contain password, hash, or the photograph containing the hash.
+
+
+## 2026-11-08 — WSL E: mount-point directory creation
+
+**EXECUTED / PHOTO-VERIFIED:** In Ubuntu WSL, author ran `sudo mkdir -p /mnt/e`. The terminal displayed a sudo password prompt, then returned to the ordinary Bash shell prompt without an error. This supports successful creation (or confirmation) of the Ubuntu directory `/mnt/e`; `mkdir -p` succeeds even if the directory already existed. An independent directory listing was not performed. The operation did **not** mount Windows E: or modify the microSD.
+
+**Author's observation/learning:** The author distinguished Windows `E:` (drive letter) from Linux `/mnt/e` (case-sensitive chosen mount-point path), and noted that Ubuntu WSL's colored Bash prompt and output are appealing, particularly the green text. The color scheme is a terminal/shell presentation feature, not evidence of drive mounting.
+
+**NEXT:** Mount only the verified Windows `E:` volume at `/mnt/e` via WSL DrvFs, then inspect `issue.txt` read-only to confirm the mounted target before creating `userconf.txt`.
