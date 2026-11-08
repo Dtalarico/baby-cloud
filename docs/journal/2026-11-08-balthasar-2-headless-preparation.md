@@ -238,3 +238,12 @@ This matches the image identification recorded on CASPER-01's original card, but
 ## 2026-11-08 — WSL remount after FAT32 repair (author report)
 
 **AUTHOR-REPORTED / EXECUTED:** After briefly attempting the Linux mount command from Windows PowerShell (which rejected `sudo` and changed nothing), the author returned to Ubuntu WSL 2 and successfully executed `sudo mount -t drvfs E: /mnt/e`, reporting success without an error. This remounts Windows' BALTHASAR-2 bootfs volume at the established Linux directory `/mnt/e`. **Pending verification:** `ls -l /mnt/e/ssh /mnt/e/issue.txt` to confirm the intended files, including a zero-byte `ssh` marker, are visible in the remounted filesystem. First-user account file not yet written. The chosen cross-node Linux username remains `david-talarico`.
+
+
+## 2026-11-08 — Post-repair boot files verified in WSL; student interprets the command
+
+**USER-SUPPLIED SCREENSHOT / EXECUTED:** From Ubuntu WSL 2 after a successful `sudo mount -t drvfs E: /mnt/e`, the author ran `ls -l /mnt/e/ssh /mnt/e/issue.txt`. Output confirms `issue.txt` exists and is **145 bytes**, and `ssh` exists and is **0 bytes**. Both appeared as `root root` with permissive `-rwxrwxrwx` DrvFs-presented permissions. These WSL mount metadata values do not establish native Raspberry Pi Linux permission configuration. This is a verified read of two expected boot-partition entries, not verification of account provisioning, OS boot, or running SSH service.
+
+**LEARNING EVIDENCE / AUTHOR ASSESSMENT:** Before executing, the author independently explained that `ls -l` was showing long-format listings of two named files, recognized the two path arguments, and reported being able to follow the purpose of commands more effectively than six months earlier. The author explicitly distinguishes guided comprehension from being able to devise the command unaided. Preserve this honest progression rather than overstating independence.
+
+**NEXT:** Safely prepare `userconf.txt` with the approved, consistent cross-node username `david-talarico` and a locally generated SHA-512-crypt password hash. Avoid exposing the secret or hash in chat, terminal screenshots or public GitHub; first boot still pending.
