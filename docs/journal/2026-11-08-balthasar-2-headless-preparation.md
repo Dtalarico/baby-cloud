@@ -263,3 +263,10 @@ This matches the image identification recorded on CASPER-01's original card, but
 **LEARNING:** The author initially requested direct exit-code interpretation and noticed phone display wrapping was causing path separator confusion. After correcting the single path argument, the author used the conditional `&&` form to confirm absence. Record accurate supported skill evidence rather than attributing independent command design.
 
 **NEXT (NOT YET EXECUTED):** Securely collect a locally typed initial password without echo, build `userconf.txt` with username `david-talarico` and SHA-512-crypt hash without displaying either password or hash in screenshots or logs, verify file presence and structure safely, clear temporary secret variables, and safely eject before first boot. No password/hash is to be committed.
+
+
+## 2026-11-08 — First userconf write attempt failed due to printf format typo
+
+**USER-SUPPLIED TERMINAL PHOTO:** The author executed Bash `read -r -s -p "Paste hash: " HASH`, and then attempted a `printf` redirection to `/mnt/e/userconf.txt`. The visible typed format string appeared to contain `%s:%\\n` **without the required second `s`**, triggering Bash's `printf: '\\': invalid format character`. This means the desired `username:hash` file content was NOT successfully verified; the `>` redirection may already have created/truncated the target and left partial contents. The screenshot also shows the `Paste hash:` prompt immediately followed by the Bash prompt on the same line, which does not establish that `HASH` contains a nonempty full hash.
+
+**SAFE NEXT READ-ONLY STEP:** Run `echo ${#HASH}` to report the number of characters in the Bash variable without exposing its contents. Then inspect the actual file's existence/size, and only after verifying hash availability repair/recreate `userconf.txt`. Do not claim first-user provisioning complete. Preserve privacy of hash and do not paste it into repository.
