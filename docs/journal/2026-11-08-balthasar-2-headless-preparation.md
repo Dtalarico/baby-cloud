@@ -36,3 +36,19 @@ The author supplied physical state and explicit preservation/documentation decis
 **AUTHOR-REPORTED WINDOWS OBSERVATION:** At mounted `bootfs (E:)` for presumed BALTHASAR-2 microSD, `issue.txt` is present; no file named `ssh` is visible; the author also reports no `user.conf.txt` (spoken filename). The expected Raspberry Pi first-user configuration file convention is **`userconf.txt` (no dot between `user` and `conf`)**; confirm the precise filename when reviewing the directory. These are file-presence observations, not proof that SSH is disabled or that no user exists. No file contents were provided.
 
 **NEXT READ-ONLY CHECK:** Open `issue.txt` and report its nonsecret image-identification text. Confirm that `userconf.txt` (exact spelling) is absent. Before writes, positively verify removable disk identity; no microSD modifications have occurred in this session.
+
+
+## 2026-11-08 — Image identification and voice-transcription correction
+
+**AUTHOR-REPORTED FILE CONTENT (read-only):** `bootfs (E:)/issue.txt` contains:
+
+```
+Raspberry Pi reference 2023-12-05
+Generated using pi-gen, https://github.com/RPi-Distro/pi-gen, 70cd6f2a1e34d07f5cba7047aea5b92457372e05, stage4
+```
+
+This matches the image identification recorded on CASPER-01's original card, but does not alone prove that Node 2 has precisely identical partition contents, boot health or account configuration. `stage4` is a pi-gen build stage, not an instruction to install a different OS.
+
+**Author correction:** The previous report's phrase `user.conf.txt` was an *inaccurate voice-to-text transcription*. The author confirms the actual filename checks were correctly stated/performed. Do not treat the transcription as a misunderstanding of the `userconf.txt` spelling. Author reports neither the empty `ssh` marker nor `userconf.txt` was found in the visible bootfs directory. No data about those files' contents exists, because neither was observed present.
+
+**Next safe verification before modifications:** Use Windows Disk Management to confirm which physical removable disk owns `bootfs (E:)`, verify approximate 64-GB-card capacity and boot partition, and explicitly exclude other attached disks. Proceed with headless first-user configuration planning only after identity and support are checked. No microSD files have been modified in this session.
