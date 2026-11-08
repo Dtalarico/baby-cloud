@@ -86,3 +86,10 @@ This matches the image identification recorded on CASPER-01's original card, but
 **INTERPRETATION:** An interactive Linux shell appears available despite a user-level systemd session warning. This is not proof that all services started correctly or that OpenSSL is installed. The `.hushlogin` note is informational. The working directory is the Windows system directory because WSL inherited the PowerShell starting location; use `cd ~` before further commands. No password, password hash, or sensitive key is shared, and no provisioning file has yet been created.
 
 **NEXT:** From inside WSL, check `openssl` availability without changing the Windows system directory or Node 2's microSD. Diagnose the systemd warning separately only if it interferes with the current goal.
+
+
+## 2026-11-08 — WSL filesystem abstraction discussion and next inspection
+
+**Learning discussion (not a device operation):** Author recognized that WSL 2 Ubuntu's `/home/<linux-user>` is a logical path within the Linux ext4 filesystem, whose actual bytes typically reside in a Windows-hosted virtual disk (`ext4.vhdx`). The Windows `\\wsl$\\Ubuntu-24.04\\` network-style path exposes Linux files without navigating to the backing VHDX, while `/mnt/c` exposes the Windows C: filesystem inside Linux. The author noted that locating the backing storage directly would be cumbersome without this abstraction. The actual value of `$HOME` on this computer has not yet been observed and should not be assumed from the example prompt.
+
+**NEXT READ-ONLY COMMAND (requested):** Run `openssl version` in the already-open Ubuntu WSL shell to confirm whether a suitable OpenSSL executable is available for local, private password-hash generation. Expected output begins with the OpenSSL version and does not modify the microSD or generate credentials. Record the reported version before moving to first-user provisioning. No credential/hash is to be sent in chat or committed to GitHub.
