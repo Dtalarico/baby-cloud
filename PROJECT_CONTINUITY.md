@@ -61,3 +61,14 @@ This document is a continuity-only addition. No hardware command was run, no con
 ## 2026-11-03 — CASPER-01 verification handoff
 
 The author rebooted CASPER-01 over SSH and successfully reconnected at 192.168.1.76. A local hostname warning was corrected by changing the 127.0.1.1 mapping in /etc/hosts from raspberrypi to CASPER-01; sudo whoami then returned root without warning. The ip -br addr output showed eth0 UP with 192.168.1.76/24 and wlan0 DOWN. See docs/journal/2026-11-03-casper-reboot-and-hostname.md for the detailed record. Windows .local resolution remains unresolved. Re-read the full repository before the next engineering session. These actions were performed by the author with AI guidance.
+
+
+---
+
+## 2026-11-08 — BALTHASAR-2 first-boot headless preparation handoff
+
+The author reports that Node 2's **original, never-booted** Vilros microSD is inserted through the USB card reader in the older Windows computer, and File Explorer displays **`bootfs (E:)`**. This is a report of the mounted volume label/drive letter, not yet verification of image version, card identity, SSH configuration, first user, or boot. The author reaffirmed the decision to preserve the preloaded image and specifically requested rigorous, dated documentation of reasoning, choices, commands, evidence, and failures as work proceeds.
+
+**Archival reading completed:** The assistant inventoried the nontruncated recursive Git tree on `main` at `417d438de7c1b5c90e762715776a777a477ef7c3` and read all **24 tracked files**, including `diagrams/baby-cloud-conceptual-eight-node-topology.svg` and `scripts/setu-rhel.sh`. No tracked file was inaccessible. This gate is specific to this session and must be repeated before the next new engineering session.
+
+**Current state:** Read-only planning; no Node 2 card write, reflash, account provisioning, SSH enablement, boot or SSH login. No credentials stored. **Next exact action:** inspect `bootfs (E:)` for `issue.txt`, `ssh`, and `userconf.txt` and verify card/disk identity before any write. See `docs/journal/2026-11-08-balthasar-2-headless-preparation.md` for the detailed decision and evidence record. Raspberry Pi OS first-boot SSH and secure user provisioning remain conditional on verification of this image.
