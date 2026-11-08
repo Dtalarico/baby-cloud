@@ -111,3 +111,10 @@ This matches the image identification recorded on CASPER-01's original card, but
 **SECURITY/PRIVACY:** The generated hash was visible on the user's uploaded terminal photograph and must be treated as sensitive; **do not transcribe, duplicate, or commit its contents**. For stronger hygiene prefer generating a fresh hash directly into a credential file without terminal echo or shell history exposure when provisioning; do not share plaintext credentials or the hash in chat. The prior screenshot should not be distributed as public engineering evidence.
 
 **NEXT:** Provision `userconf.txt` safely on verified BALTHASAR-2 `bootfs (E:)`, containing only the intended Linux username and locally generated password hash, then verify presence without exposing secret contents. This operation is **not yet completed**. The `ssh` marker has been created; Node 2 still has not been booted or authenticated remotely.
+
+
+## 2026-11-08 — WSL cannot currently see E: through `/mnt/e`
+
+**AUTHOR-SUPPLIED TERMINAL PHOTOGRAPH:** From WSL Ubuntu home directory the author ran `ls -ld /mnt/e` and received `ls: cannot access '/mnt/e': No such file or directory`. This establishes that the expected WSL mount point `/mnt/e` was absent at the time, **not** that the underlying Windows E: microSD card is inaccessible or defective. Earlier Windows File Explorer/Disk Management inspections successfully read the card's bootfs partition. Author asked the conceptual distinction between hashing and encryption; assistant clarified one-way password verification, salt and `$6$` SHA-512-crypt method identifier.
+
+**NEXT:** Prefer lowest-risk route to prepare Node 2 `userconf.txt`, possibly explicitly mount removable Windows E: under WSL using drvfs if supported, or use Windows PowerShell without exposing secrets. Any mount must target only verified E: and avoid changing partitions. SSH marker is present; `userconf.txt` is not yet created, and no first boot or SSH connection is verified. Public repo must not contain password, hash, or the photograph containing the hash.
