@@ -183,3 +183,12 @@ This matches the image identification recorded on CASPER-01's original card, but
 **TARGET:** Windows `bootfs (E:)`, previously verified as FAT32 512 MB partition on Disk 2 59.69 GB; WSL was previously instructed to unmount `/mnt/e` before running Windows CHKDSK, and Windows diagnostic ran to completion. Always reconfirm drive letter if card was removed/reinserted. **APPROVED STEP:** `chkdsk E: /f` from Windows PowerShell, fixing detected FAT32 structural inconsistencies only. Unlike read-only `chkdsk E:`, `/f` writes filesystem metadata and may repair or discard orphan directory entries; lost-chain prompts must be assessed before answering. **NOT AUTHORIZED:** formatting, reimaging, repartitioning, repairing the Linux ext partition, or assuming physical card health.
 
 **EXECUTION STATUS:** Only guidance given; the author has not yet reported running `chkdsk E: /f`, and no repair result has been observed. **NEXT EVIDENCE:** record exact program output and interactive choices; then recheck normal boot files (`issue.txt`, `config.txt`, empty `ssh`) and repeat non-fixing filesystem verification before any `userconf.txt` write or first boot. If repair cannot complete or new anomalies remain, stop and reassess.
+
+
+## 2026-11-08 — CHKDSK /f running; lost-chain decision presented
+
+**SCREENSHOT-VERIFIED, IN PROGRESS:** The author ran `chkdsk E: /f` in Windows PowerShell against the BALTHASAR-2 `bootfs` FAT32 volume. Windows reported `Removing trailing folder entries from \`, `File and folder verification is complete`, and prompted `Convert lost chains to files (Y/N)?`. The screenshot stops at the prompt: no answer or final repair result is yet observed.
+
+**RECOMMENDATION (not an executed result):** Unlike the earlier non-fixing diagnostic, during the explicitly approved filesystem repair the assistant recommends **Y** to convert orphaned cluster chains into recovered files, typically `.CHK`, so potentially recoverable information is not immediately freed. `N` generally frees lost clusters. This is a write operation, authorized as part of the user-approved `/f` repair, but the final outcome remains pending. Recovered fragments and any generated `FOUND.000` directory should be assessed rather than deleted reflexively. Avoid claiming card integrity or successful boot before subsequent checks.
+
+**NEXT:** Obtain the final CHKDSK report, perform a subsequent non-fixing `chkdsk E:` validation and inspect whether expected boot files still exist; only afterward resume initial account provisioning.
