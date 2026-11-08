@@ -102,3 +102,12 @@ This matches the image identification recorded on CASPER-01's original card, but
 **INTERPRETATION:** The OpenSSL executable is available in Ubuntu and reports the matching runtime library version. This enables local password-hash generation; it does not establish that the hash or a `userconf.txt` file has yet been generated.
 
 **NEXT APPROVED GUIDED STEP:** Run `openssl passwd -6` interactively inside Ubuntu WSL to produce a SHA-512-crypt password hash (`$6$...`) without placing the plaintext password in shell history or sharing either plaintext password or generated hash with the assistant. Confirm only presence and `$6$` prefix; follow-up will safely write a single `username:hash` line to `bootfs (E:)/userconf.txt` and verify it locally. No credential should be committed to public GitHub.
+
+
+## 2026-11-08 — SHA-512-crypt generation in Ubuntu WSL verified by photo
+
+**USER-SUPPLIED PHOTOGRAPH OF TERMINAL:** The author changed from `/mnt/c/WINDOWS/system32` to the Linux home directory with `cd ~`, queried `openssl version` and observed OpenSSL 3.0.13 (library 3.0.13), then made a command-name typo and received `Command '...' not found`. The author corrected the command to `openssl passwd -6`, received `Password:` and `Verifying - Password:` prompts, and OpenSSL returned a hash **beginning with `$6$`**. This verifies successful SHA-512-crypt hash generation. A successful generation does not verify account creation or SSH authentication on BALTHASAR-2.
+
+**SECURITY/PRIVACY:** The generated hash was visible on the user's uploaded terminal photograph and must be treated as sensitive; **do not transcribe, duplicate, or commit its contents**. For stronger hygiene prefer generating a fresh hash directly into a credential file without terminal echo or shell history exposure when provisioning; do not share plaintext credentials or the hash in chat. The prior screenshot should not be distributed as public engineering evidence.
+
+**NEXT:** Provision `userconf.txt` safely on verified BALTHASAR-2 `bootfs (E:)`, containing only the intended Linux username and locally generated password hash, then verify presence without exposing secret contents. This operation is **not yet completed**. The `ssh` marker has been created; Node 2 still has not been booted or authenticated remotely.
