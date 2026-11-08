@@ -224,3 +224,12 @@ This matches the image identification recorded on CASPER-01's original card, but
 **AUTHOR'S TROUBLESHOOTING:** Inspected the error and corrected the PowerShell parameter name. Record the failed spelling and successful correction as part of the learning evidence, rather than silently removing the mistake.
 
 **NEXT:** Prepare `userconf.txt` for BALTHASAR-2's headless first boot using a chosen Linux username and the already locally generated SHA-512-crypt password hash. Do not expose plaintext passwords, hashes, or screenshots containing the hash in this public repository. Avoid unnecessary repeat writes to the boot partition. Verify the file exists and has one `username:hash` line without printing secrets, then safely eject the card and conduct first-boot verification.
+
+
+## 2026-11-08 — Author decision: consistent Linux identity across Beowulf nodes
+
+**APPROVED / AUTHOR-EXPLICIT:** The author selected **`david-talarico`** as BALTHASAR-2's initial Linux login username to match the already verified CASPER-01 SSH login username, rather than using the shorter WSL login name `dtalarico`. This is an **approved provisioning intention, not yet an account created on Node 2**.
+
+**PROJECT ENGINEERING PREFERENCE:** The author explicitly values **congruency/consistency across the Beowulf system**: node configuration, user identities, administration conventions and other reproducible baseline settings should align wherever practical. This enables easier cross-node comparison, shared administration, automation and eventual parallel-computing setup. Consistency is not a claim that unlike OS distributions must become identical; any necessary differences should be intentional, tested and documented, not accidental or silently normalized. Preserve CASPER-01's actual configured hostname `CASPER-01` and prior naming decisions. BALTHASAR-2's eventual hostname remains to be deliberately confirmed/configured separately from the login name.
+
+**NEXT:** Securely create and locally verify `E:\userconf.txt` with username `david-talarico` and an appropriate SHA-512-crypt password hash without publishing the credential or hash. The zero-byte SSH marker has been recreated; first-user provisioning and Node 2 boot are still unverified.
