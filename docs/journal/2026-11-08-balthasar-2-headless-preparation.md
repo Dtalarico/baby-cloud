@@ -215,3 +215,12 @@ This matches the image identification recorded on CASPER-01's original card, but
 **INTERPRETATION:** It is plausible that `chkdsk E: /f` removed or detached an invalid directory entry corresponding to `ssh` while correcting the FAT32 directory structure, but this **cause is not established** without filesystem provenance. The absence is confirmed only at the post-repair checkpoint; do not claim exactly when or why deletion occurred. The known-valid vendor boot files `issue.txt` and `config.txt` remain readable. Their presence does not prove the whole OS boots.
 
 **NEXT PROPOSED NARROW WRITE:** Recreate the intentionally empty `ssh` marker on verified `E:` using PowerShell `New-Item -Path E:\ssh -ItemType File`, and check that it has length zero. This writes one file to the now CHKDSK-clean FAT32 boot volume; no OS reimage, format, or partition change. `userconf.txt` and verified first boot still pending. Do not capture or commit plaintext password or its hash.
+
+
+## 2026-11-08 — SSH marker restored after FAT32 repair
+
+**USER-SUPPLIED POWERSHELL PHOTOGRAPHS:** After CHKDSK repaired `bootfs (E:)`, an inspection found `E:\ssh` absent while `E:\issue.txt` and `E:\config.txt` remained readable. The author attempted `New-Item E:\ssh -Item-Type File` and PowerShell reported `A parameter cannot be found that matches parameter name 'Item-Type'`. The author corrected the parameter spelling to `-ItemType` and reran `New-Item E:\ssh -ItemType File` successfully. PowerShell returned `Directory: E:\`, name `ssh`, `Length` **0**, last-write time **2026-11-08 4:55 PM** local. This is evidence of the correctly created empty marker on the mounted FAT32 boot partition; it does not verify SSH service startup on Raspberry Pi.
+
+**AUTHOR'S TROUBLESHOOTING:** Inspected the error and corrected the PowerShell parameter name. Record the failed spelling and successful correction as part of the learning evidence, rather than silently removing the mistake.
+
+**NEXT:** Prepare `userconf.txt` for BALTHASAR-2's headless first boot using a chosen Linux username and the already locally generated SHA-512-crypt password hash. Do not expose plaintext passwords, hashes, or screenshots containing the hash in this public repository. Avoid unnecessary repeat writes to the boot partition. Verify the file exists and has one `username:hash` line without printing secrets, then safely eject the card and conduct first-boot verification.
