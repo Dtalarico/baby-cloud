@@ -212,3 +212,10 @@ The extension draws on [LinuxLingo's LL-DOC-001](https://github.com/Dtalarico/Li
 ## 2026-11-02 — First node commissioned: naming decision (append-only)
 
 The earlier **Casper-1** entry above remains an accurate record of the *planned* naming convention at the time. During actual SSH commissioning, the author remotely set the first node's Linux static hostname to **`CASPER-01`** and verified it with `hostnamectl` (`Static hostname: CASPER-01`). The author explicitly chose to **keep `CASPER-01`** and document that actual choice rather than rename the node to match the earlier proposal. This is the current first-node operational name. The historical naming discussion remains intact; the planned names for other nodes have not been changed by this decision.
+
+
+---
+
+## November 9, 2026 — Portfolio readiness and evidence goals
+
+**Portfolio evidence and hiring-readiness goals (November 9, 2026):** [Measurable project milestones, acceptance criteria, current proof and outstanding gaps](docs/portfolio-readiness.md). The roadmap prioritizes verified MPI, reproducible administration, automation, restoration and concise demonstrations, without changing Baby Cloud's Beowulf mission or claiming employer-specific guarantees.
