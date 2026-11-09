@@ -1,3 +1,41 @@
+# Current verified project status — November 9, 2026
+
+> **Dated status update:** This section supersedes the older commissioning and purchasing-status descriptions retained below as historical planning records. It does not rewrite the original decisions or imply that MPI is operational.
+
+**Baby Cloud has two commissioned Raspberry Pi 4 (4 GB) nodes connected to the TP-Link TL-SG116E 16-port Gigabit switch, which is linked to the existing AT&T home gateway.** Both nodes have been successfully accessed by SSH from the Windows workstation using their configured hostnames. This is a real, operational two-node Linux/networking foundation; it is **not yet** a verified parallel-computing Beowulf cluster.
+
+| Node | Verified operational hostname | Verified status |
+|---|---|---|
+| Node 1 — MAGI Casper | `CASPER-01` | Raspberry Pi OS; SSH login via host name verified from Windows, also previously tested by wired IPv4 address |
+| Node 2 — MAGI Balthazar | `BALTHAZAR-02` | Raspberry Pi OS; original preloaded card repaired and used for a fully headless first boot, initial account/SSH configured, login by new hostname independently verified |
+
+The verified login name used on both systems is `david-talarico`. Older naming proposals (`Casper-1`, `Balthasar-2`) are intentionally preserved below; **the table above reports actual operational hostnames**, including the observed **Z** spelling and two-digit suffix on Node 2.
+
+### What was accomplished on November 8, 2026
+
+- Prepared Node 2's existing Raspberry Pi OS boot media, diagnosed anomalous FAT32 directory entries and repaired the filesystem before provisioning. Preserved the supplied OS rather than reflashing.
+- Used Windows and Ubuntu under WSL (Windows Subsystem for Linux) to prepare Node 2's first-boot SSH and Linux-user configuration, without publishing credentials.
+- Successfully booted Node 2 **without a monitor or keyboard**, authenticated remotely by SSH, and confirmed Node 1 still accepted its own hostname-based SSH login.
+- Renamed Node 2 to `BALTHAZAR-02` and updated its local hosts configuration. Diagnosed the initially unsuccessful Windows hostname lookup: Avahi was still advertising `raspberrypi.local`. After restarting the service, the author independently demonstrated successful Windows SSH login to `BALTHAZAR-02`.
+- Documented the commands, observed results, failures, corrections, and instructional lessons in the November 8 engineering journal. The work was completed by the project author, with AI-assisted guidance and explicitly identified independent tests.
+
+### Next verified milestone — not completed yet
+
+Choose the Message Passing Interface (MPI) implementation, verify direct communication between the two nodes, configure a consistent host inventory and authentication approach, and run **one real distributed computation across both Raspberry Pis**. Record per-node participation, a correct combined result, and comparison against a single-node execution. Do not claim Beowulf compute capability until this is observed.
+
+### Longer-term direction
+
+The founding goal remains an **eight-node Beowulf-style compute cluster**. Expansion beyond the current two nodes is contingent on hardware and funding. Additional operating-system choices, including Rocky Linux and experimental Gentoo/Linux From Scratch builds, are future proposals rather than completed deployments.
+
+### Evidence and continuity
+
+- [Project continuity and latest verified state](PROJECT_CONTINUITY.md)
+- [November 8 commissioning and troubleshooting journal](docs/journal/2026-11-08-balthasar-2-headless-preparation.md)
+- [Architecture and founding Beowulf mission](docs/architecture.md)
+- [Documentation and evidence policy](docs/documentation-policy.md)
+
+---
+
 # Baby Cloud
 
 ## Governing Documentation Principle
