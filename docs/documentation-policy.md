@@ -105,3 +105,19 @@ The governing BC-DOC-001 policy above remains intact. Maintain **PROPOSED / APPR
 **Specific teaching failure — 2026-11-08 first-user file provisioning:** The assistant offered complex `printf '%s:%s\\n' ...` syntax before defining format specifiers, newline escape and shell redirection, causing phone-screen transcription errors and a failed `printf`. The author independently corrected syntax and verified the actual `userconf.txt` contents with `cat`. For learning, teach syntax and alternatives (including a text editor) before unfamiliar commands, and favor a transparent one-step verify when appropriate. Explain caching/write completion vs safe removal accurately, without unnecessary repeated safety detours.
 
 **Conversation/project continuity:** Keeping a conversation inside a ChatGPT project helps organization but **does not guarantee that another chat will recall all details**. The GitHub record and mandatory fresh archive read on a new Baby Cloud session are the source of durable engineering/teaching continuity. Do not treat remembered chat summaries as a replacement for reading these files.
+
+
+---
+
+## 2026-11-09 — Author-directed visual engineering documentation standard
+
+**Status: APPROVED project documentation preference; additive policy.** The author wants useful engineering diagrams developed and maintained as a normal part of Baby Cloud, not as decorative infographics. Preserve the existing eight-node conceptual SVG and all prior records.
+
+1. **At every design, commissioning, change, or handoff milestone, explicitly assess whether a diagram would reduce ambiguity.** In particular consider physical/network topology, node inventory and operating-system roles, MPI control/data flow, storage and NAS connections, migration/change sequence, and failure/recovery paths. Do not generate gratuitous illustrations or cluttered infographics.
+2. **Distinguish PROPOSED from VERIFIED visually and in the accompanying caption.** Date and version each relevant diagram; give its scope, source/evidence, author and verification boundary. A conceptual eight-node design must never be mistaken for eight commissioned nodes. A diagram is no substitute for tested observations or the engineering journal.
+3. **Keep diagrams synchronized with the system and the written records.** When actual hardware, node names, topology, addresses, roles or interconnections change, check the affected diagram and either update its current-state version or explicitly mark it historical/pending. Preserve superseded intent and change reasoning in dated records or Git history.
+4. **Prefer readable, version-controlled, maintainable sources** such as SVG or Mermaid, with clear labels and simple layout; link the diagram from the README, architecture, or relevant engineering journal. Avoid screenshots of undocumented diagrams as the sole source of truth.
+5. **Make the visuals accessible to an intelligent nontechnical reader** while preserving technical precision. Include concise legends for unfamiliar icons, link types, node roles, and acronyms. Do not publish secrets or unnecessarily identifying network details.
+6. **At session closeout, record whether diagrams were reviewed, created, updated, deferred, or not needed**, and why. Do not claim diagram creation or verification unless actually completed.
+
+**Implementation boundary:** This policy records documentation expectations only. It does not assert that any new diagram or hardware configuration was created or tested on 2026-11-09.
