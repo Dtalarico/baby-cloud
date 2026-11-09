@@ -135,3 +135,18 @@ The author reports that Node 2's **original, never-booted** Vilros microSD is in
 **Future assistant handoff requirement:** When reading this repository, consider diagrams at design, setup, change, troubleshooting and closeout; explicitly label proposed versus verified states; keep current diagrams and linked written records synchronized; date, link, and version source-editable SVG/Mermaid where useful; document when visuals are deferred. Do not silently imply the eight-node diagram reflects actual eight-node deployment. Follow the full reading gate at the next new engineering session.
 
 **Next exact project task remains:** With author authorization, independently verify current node state and plan the minimum two-node MPI experiment. Before changes, determine whether a concise proposed MPI workflow or verified wiring diagram would clarify the work, and record any visual update honestly.
+
+
+---
+
+## 2026-11-09 — Hiring-readiness evidence roadmap created
+
+**Author instruction:** Make Baby Cloud a hiring-relevant portfolio artifact and document the specific technical demonstrations still needed, while preserving its Beowulf-computing mission. These milestones are evidence goals, not a promise of employment or a blanket definition of Red Hat/Kyndryl hiring criteria.
+
+**Archive review:** The nontruncated recursive `main` tree at `d91e4ddec4c3c5045df44a2d84e4d71d01d073aa` contained 25 tracked files. All 25 were successfully fetched and inspected before documentation changes, including the SVG and shell script. No live hardware check or new technical test was performed.
+
+**EXECUTED documentation changes:** Created `docs/portfolio-readiness.md` (commit `ef9669c9a5381d932b1fc8cc1a6d32b283539f34`) and added its link to `README.md` (commit `84b081149fbb912d7f2d360665538cb7e68a5585`). The evidence roadmap identifies verified existing work versus open deliverables: real MPI job and timing comparisons, Linux/Rocky administration, repeatable automation, proven restoration, monitoring/security/incident recovery, multi-node scale-out, and a reproducible reviewer-facing demonstration. Each proposed milestone requires explicit observable acceptance evidence and accurate attribution.
+
+**VERIFICATION BOUNDARY:** GitHub writes succeeded; no MPI job, deployment, backup restoration, security baseline, or new code implementation was completed by this change. Previously documented two-node commissioning remains the physical baseline. No host/network secret or credential was added.
+
+**Next action:** At the next author-directed engineering session, read the refreshed entire repository, confirm live state, use portfolio BC-P1 as the evidence specification when planning the first two-node MPI computation, and request separate approval before device changes.
