@@ -121,3 +121,22 @@ The governing BC-DOC-001 policy above remains intact. Maintain **PROPOSED / APPR
 6. **At session closeout, record whether diagrams were reviewed, created, updated, deferred, or not needed**, and why. Do not claim diagram creation or verification unless actually completed.
 
 **Implementation boundary:** This policy records documentation expectations only. It does not assert that any new diagram or hardware configuration was created or tested on 2026-11-09.
+
+
+---
+
+## 2026-11-09 — Current-first documentation and navigable history standard
+
+**Status:** Author-directed and approved documentation practice, added without replacing earlier historical policy.
+
+**Intent:** Keep the repository legible to hiring managers, new engineers, and future assistants as it grows, without deleting the reasoning, failures, and original decisions that give the engineering record integrity.
+
+1. **README is the present-day front door.** Maintain a short, dated overview, last verified capabilities, boundaries, active milestones, one useful architecture diagram when appropriate, and direct links to deeper evidence. Keep old status prose out of the reader's primary path. Do not append a full chronological journal to the README.
+2. **Evidence goes where it belongs.** Put individual commands, screenshots descriptions, outcomes, troubleshooting, and observed evidence in dated journals; rationale and trade-offs in decision/architecture records; current verified state and next exact task in PROJECT_CONTINUITY.md; proposed acceptance targets in docs/portfolio-readiness.md; historical README snapshots in README-HISTORY.md or another explicitly indexed archive. Do not create duplicate competing sources of truth.
+3. **Preserve provenance.** Date changes, label PROPOSED / APPROVED / EXECUTED / VERIFIED, distinguish assisted from independent work, and preserve original wording and context when reorganizing. Do not erase corrections or imply that moving prose proves old unverified claims.
+4. **Newest important information first.** A visitor should reach current capability, limitations, next step, architecture and evidence within seconds. The history must remain discoverable by a clearly named link, even when older material is removed from the landing page.
+5. **Update navigation with each milestone.** When technical progress occurs, update the relevant journal/decision, continuity record, portfolio-evidence status, useful diagrams and compact README status/link as appropriate. Verify links and ensure neither the README nor diagrams contradict current evidence.
+6. **Reorganization is its own controlled change.** Before a substantial rewrite, inspect the entire repository under the existing archival gate; create or verify a complete unchanged archive snapshot; make small reviewable changes; check relative-link context, headings, filenames, confidentiality and proposed-versus-verified claims. Record any link or content gap rather than silently discarding it.
+7. **Avoid unnecessary duplicate work.** Update only material affected by the milestone. Keep the engineer's and reader's cognitive effort proportional to the change.
+
+**Verification boundary:** This policy change governs future documentation. It is not a claim of newly tested cluster software, hardware or application behavior.
