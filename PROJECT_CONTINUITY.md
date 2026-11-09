@@ -103,3 +103,20 @@ The author reports that Node 2's **original, never-booted** Vilros microSD is in
 ## 2026-11-08 — FINAL CLOSEOUT: Both nodes accessible by configured hostnames
 
 **VERIFIED UPDATE superseding earlier pending/new-name-SSH wording:** The author independently ran `ssh david-talarico@BALTHAZAR-02` from REAPER-ONE-PC after Avahi's authenticated restart. Windows resolved it to an IPv6 address, SSH explicitly recognized the presented ED25519 key as already known under `raspberrypi.local`, and the authenticated session displayed `Linux BALTHAZAR-02` and `david-talarico@BALTHAZAR-02:~ $`. Successful remote first-boot provisioning and new-hostname login are now fully verified; prior name-resolution failure was resolved. Node 1 `CASPER-01` was independently verified by hostname in this session as well. Thus both installed Raspberry Pis are **SSH-accessible using their configured hostnames**. The author marked this as the end-of-week stopping point and explicitly requested durable documentation of assistant teaching omissions and independently acquired troubleshooting skills. Next deliverable: decide and implement minimum two-node MPI/Beowulf distributed job (not yet attempted); first apply fresh repository reading gate at next session. No need to troubleshoot hostname resolution further unless new evidence arises.
+
+
+---
+
+## 2026-11-09 — README current-status correction after author review
+
+**Objective:** Ensure visitors, including the NOS-120 instructor, see the verified November 8 commissioning achievements without reading the full engineering journal. The author flagged that the README's old purchasing status obscured completed work.
+
+**Starting evidence and archival gate:** A nontruncated recursive Git tree on `main` at `be6ea443450d2cd8195e9238b25548f2c11fb466` listed **25 tracked files**. All 25 files were fetched and inspected in this session, including the SVG diagram and shell script; no inaccessible tracked files were reported. This gate applies to this documentation session only and must be repeated for future engineering operations.
+
+**Change executed:** Added a prominently positioned, explicitly dated November 9 current-status update to `README.md` and preserved the prior README content as historical planning information. The update links to this continuity record and the detailed November 8 journal, identifies the exact operational names `CASPER-01` and `BALTHAZAR-02`, summarizes the verified SSH and headless-boot accomplishments, and clearly states that MPI has **not** been implemented. Commit: `113f8184278eef55fd487cffee67086a9447d266`.
+
+**Verification boundary:** GitHub confirmed the README file-update commit; no physical device was accessed or tested today, and no additional hardware, operating-system, MPI or network accomplishment is claimed. The user-provided November 8 findings remain the last documented hardware verification.
+
+**Next exact task:** At the author's direction, repeat the current-repository reading gate, confirm live node state, and design the first minimum genuine two-node MPI workload; request approval before installing packages or changing network configuration. Preserve evidence, authorship and failure documentation.
+
+**Provenance:** Documentation update by assistant in response to author's direct README currency concern, grounded in preexisting author-observed journals and continuity records.
