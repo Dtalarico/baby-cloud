@@ -120,3 +120,18 @@ The author reports that Node 2's **original, never-booted** Vilros microSD is in
 **Next exact task:** At the author's direction, repeat the current-repository reading gate, confirm live node state, and design the first minimum genuine two-node MPI workload; request approval before installing packages or changing network configuration. Preserve evidence, authorship and failure documentation.
 
 **Provenance:** Documentation update by assistant in response to author's direct README currency concern, grounded in preexisting author-observed journals and continuity records.
+
+
+---
+
+## 2026-11-09 — Visual documentation requirement established
+
+**Author request:** Use more clear, technically meaningful diagrams throughout Baby Cloud and persist that preference in GitHub for future work sessions. Do not confuse this with a request for busy infographics.
+
+**Archival gate for this documentation session:** Re-inventoried the current nontruncated `main` Git tree at `159f9055fcb1ac81ebaec02db2809b507bccb92b`; all 25 tracked files, including the SVG topology source, were fetched and inspected with no failures. No devices were touched or independently tested.
+
+**Git changes EXECUTED:** Added a dated, additive visual-engineering-documentation standard to `docs/documentation-policy.md` (commit `b570f531308f25ba645e053947ef9e8e7f343cbd`) and a diagram inventory and maintenance checklist to `diagrams/README.MD` (commit `708b0bbacd5cf74e53c26c97fd787cadf951202c`). Existing topology SVG was intentionally not altered. These commits record **policy and planning**, not a newly completed diagram or infrastructure change.
+
+**Future assistant handoff requirement:** When reading this repository, consider diagrams at design, setup, change, troubleshooting and closeout; explicitly label proposed versus verified states; keep current diagrams and linked written records synchronized; date, link, and version source-editable SVG/Mermaid where useful; document when visuals are deferred. Do not silently imply the eight-node diagram reflects actual eight-node deployment. Follow the full reading gate at the next new engineering session.
+
+**Next exact project task remains:** With author authorization, independently verify current node state and plan the minimum two-node MPI experiment. Before changes, determine whether a concise proposed MPI workflow or verified wiring diagram would clarify the work, and record any visual update honestly.
