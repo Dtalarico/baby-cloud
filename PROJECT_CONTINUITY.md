@@ -150,3 +150,24 @@ The author reports that Node 2's **original, never-booted** Vilros microSD is in
 **VERIFICATION BOUNDARY:** GitHub writes succeeded; no MPI job, deployment, backup restoration, security baseline, or new code implementation was completed by this change. Previously documented two-node commissioning remains the physical baseline. No host/network secret or credential was added.
 
 **Next action:** At the next author-directed engineering session, read the refreshed entire repository, confirm live state, use portfolio BC-P1 as the evidence specification when planning the first two-node MPI computation, and request separate approval before device changes.
+
+
+---
+
+## 2026-11-09 — Current-first README reorganization and durable navigation rule
+
+**Author instruction:** Reorganize the growing repository now so a new engineer or hiring reviewer sees the newest verified state and where to go next, rather than scrolling through historical addenda. The author explicitly required that future documentation sessions consistently follow this approach.
+
+**Archive gate:** Re-inventoried the nontruncated recursive main Git tree at full tree SHA \`ddc639ddf80063432f8df713ec17e826018e5d6d\`); all 26 tracked files were fetched for inspection, including the SVG topology source, shell script, project continuity, decisions, journals and policies. No files were inaccessible; no physical-device operations were performed.
+
+**Original README preserved:** Created \`README-HISTORY.md\` as an unchanged copy of the then-current 19,407-character README (commit \`51a57844fffa0a68b810691c3197ad98fa6e026a\`). Re-fetched the archive and confirmed its length and original opening/closing material. Because this archive remains at repository root, the original relative paths retain their base location. Git history also preserves the earlier original.
+
+**Current README reorganized:** Replaced the former 19,407-character README with a ~6,647-character current-first landing page (commit \`47d4ca97062b2ddf51604a4a73cd0dfaab5ee422\`). It includes: project mission; dated deployed/verified status with precise operational names CASPER-01 and BALTHAZAR-02; clear *not-yet-implemented* MPI boundary; architecture/conceptual SVG; next accepted engineering milestone; portfolio evidence roadmap; documentation navigation; future proposals; and a conspicuous link to the full original history.
+
+**Permanent documentation rule recorded:** Appended a dated section 'Current-first documentation and navigable history standard' to \`docs/documentation-policy.md\` (commit \`312e1c0d434a5db5724e75094b14d312d841bcc4\`). Future sessions are to keep the README concise and newest-first, place historical details in indexed journals and decisions, update links/continuity/appropriate diagrams with actual milestones, preserve prior intent, and never claim unverified capabilities.
+
+**Evidence boundary:** GitHub writes and subsequent reads verified the README and archive exist and the policy addition is present. No new MPI job, backup restoration, device commissioning, automation, or benchmark was carried out. Existing November 8 SSH checks remain the last recorded physical-cluster verification.
+
+**Next exact project task:** Under a fresh full-repository archival read and author approval, verify live two-node communication and design the first genuine two-node MPI workload with acceptance criteria per BC-P1. Keep the current-first front page and supporting evidence synchronized; do not append chronological details directly to the README.
+
+**Authorship and assistance:** The author directed the information architecture and demanded durable future adherence; assistant performed the repository documentation restructuring and evidence-linked handoff.
