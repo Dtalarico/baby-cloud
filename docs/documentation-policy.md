@@ -140,3 +140,18 @@ The governing BC-DOC-001 policy above remains intact. Maintain **PROPOSED / APPR
 7. **Avoid unnecessary duplicate work.** Update only material affected by the milestone. Keep the engineer's and reader's cognitive effort proportional to the change.
 
 **Verification boundary:** This policy change governs future documentation. It is not a claim of newly tested cluster software, hardware or application behavior.
+
+
+---
+
+## 2026-11-18 — Operator discovery, procedural checkpoints and readability (author-directed addendum)
+
+**Status:** APPROVED documentation and instruction requirement; no new Raspberry Pi configuration, network test, or software implementation is implied. Preserve earlier policies and evidence.
+
+For each unfamiliar Linux/network/cloud component, teach and record together: **(1) what it does; (2) how an operator discovers its true location and configuration from the function and installed software; (3) how to verify its observable behavior**. Do not require a beginner to guess `/etc` paths, service names, switch topology, daemon names, or filenames by rote. Decode acronyms and filenames explicitly, follow references from actual entry-point configuration, and distinguish a component's role from its implementation. When the infrastructure topology matters, connect physical/virtual NIC, interface, switch, address, subnet, gateway, DNS client and server in a real or explicitly conceptual diagram, labeling what has not been inspected.
+
+**Mandatory operator order:** **INSPECT → READ → CHECK → EXECUTE → VERIFY**. Inspect actual machine and starting state; read task requirements literally; check exact target, privileges, syntax, current values, related dependencies and preservation constraints; execute the minimal authorized step; verify contents, system state and end-to-end result at planned checkpoints. Track what is complete and what remains. Never assume an unknown value or replace observed facts with inferred values. In multi-change configuration work, prepare and check the full change before editing and applying unless a required intermediate checkpoint dictates otherwise. Treat a syntax check, applied configuration, ping from a machine to its own address, peer reachability and functional DNS resolution as different evidence levels.
+
+**Human-readable formatting standard:** Readability outranks obsolete byte-saving compactness. Use whitespace, indentation, blank lines, labeled sections, descriptive names, code formatting, and legible diagrams to expose meaning and dependencies. Do not dump walls of terse symbols or unannotated configuration at an operator. Respect machine parsing and file-format rules; whitespace must clarify meaning without breaking syntax. This is a design and documentation policy, not a claim that existing hardware/software has been reformatted.
+
+**Related authority:** The detailed educational doctrine belongs in the [LinuxLingo Master Specification](https://github.com/Dtalarico/LinuxLingo/blob/main/LINUXLINGO_MASTER_SPEC.md). Baby Cloud applies it to real infrastructure and records execution evidence separately. For further language/interface architecture, consult the author's EsperanTek corpus.
