@@ -70,6 +70,8 @@ These are evidence goals, **not promises of hiring** or prerequisites for comple
 | Measurable portfolio gaps and acceptance criteria | [Portfolio roadmap](docs/portfolio-readiness.md) |
 | Entire previous README, preserved verbatim | [README historical archive](README-HISTORY.md) |
 
+**Current physical network (documented, not live-retested):** [Two-node as-documented network diagram](diagrams/baby-cloud-as-documented-two-node-network-2026-11-20.svg). The [eight-node diagram](diagrams/baby-cloud-conceptual-eight-node-topology.svg) is conceptual, not deployed.
+
 **Engineering journal — newest first:** [Unified dated journal index](docs/journal/README.md), covering both `docs/journal/` and `journal/` without moving historical entries.
 
 **Documentation rule:** This README is a short, current landing page, **not** an accumulating chronological journal. New milestones should update its current-status and evidence links while preserving the original facts, dated decisions, mistakes, and reasoning in the appropriate engineering records. Version-control any useful diagrams and distinguish proposals from actual verified deployments.
