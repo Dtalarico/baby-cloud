@@ -188,3 +188,20 @@ The author reports that Node 2's **original, never-booted** Vilros microSD is in
 **Project applicability:** For Baby Cloud, expose target node, execution environment, privilege level, dependencies, exact command, expected state, and rollback/verification before running commands. For LinuxLingo, teach correct commands and accepted values with guided, observable verification; do not mark deliberate operator learning as unproductive cognitive overhead. For FlowTops, TalkChain/tokChain, and esperanTek, require semantic congruence, standardized terminology, explicit context and authorization, clear failure messages, and human-centered operating contracts. Cross-project applicability is a **design directive**, not evidence of implementation.
 
 **Status:** DOCTRINE RECORDED; no new software behavior, hardware testing, or operational implementation is implied. This is a dated append-only extension; earlier text remains authoritative as historical record unless explicitly superseded.
+
+
+---
+
+## 2026-11-20 — Documentation review and durable hiring-manager presentation handoff
+
+**Author direction:** Fix the documentation now and make future updates follow the documented process consistently. This is authorization for documentation-only navigation and policy maintenance, not live system changes.
+
+**Repository review:** All 27 tracked files in the nontruncated `main` tree `4e66f9f0c8de6ba658e96ec2830d397324574d99` were read, including the SVG and shell script. Existing November 9 current-first policy and README archive were found; this is a clarification and enforcement of that earlier standard, not a new competing policy.
+
+**Changes:** Added a 2026-11-20 append-only amendment to `docs/documentation-policy.md` requiring current-first summaries, newest-first cross-directory journal indexing, chronological dated session records, and explicit INSPECT → IDENTIFY → ASCERTAIN → MODIFY → VERIFY for documentation updates. Created `docs/journal/README.md` as the unified newest-first index for both existing journal directories. No existing dated journal was moved, edited, or deleted.
+
+**Current documented operational state:** CASPER-01 and BALTHAZAR-02 were last recorded as independently SSH-accessible on 2026-11-08; TP-Link TL-SG116E NERV switch uplink and management were previously documented. No two-node MPI job, restored backup, or live infrastructure retest has been verified by this documentation session.
+
+**Outstanding documentation opportunities, not yet authorized changes:** Put a concise current-state pointer at the top of this long continuity file; link the unified index prominently from the root README and legacy `journal/README.md`; make a verified as-built topology distinct from the existing conceptual eight-node SVG; label the old virtualized topology note as historical; review the placeholder `docs/services.md` and early `scripts/setu-rhel.sh` without claiming tested functionality. Preserve originals and verify any subsequent edits.
+
+**Mandatory future behavior:** Follow the 2026-11-20 BC-DOC-001 amendment for every substantive update; do not require the author to restate newest-first navigation, preservation of history, hiring-manager readability, or verification requirements.
