@@ -155,3 +155,30 @@ For each unfamiliar Linux/network/cloud component, teach and record together: **
 **Human-readable formatting standard:** Readability outranks obsolete byte-saving compactness. Use whitespace, indentation, blank lines, labeled sections, descriptive names, code formatting, and legible diagrams to expose meaning and dependencies. Do not dump walls of terse symbols or unannotated configuration at an operator. Respect machine parsing and file-format rules; whitespace must clarify meaning without breaking syntax. This is a design and documentation policy, not a claim that existing hardware/software has been reformatted.
 
 **Related authority:** The detailed educational doctrine belongs in the [LinuxLingo Master Specification](https://github.com/Dtalarico/LinuxLingo/blob/main/LINUXLINGO_MASTER_SPEC.md). Baby Cloud applies it to real infrastructure and records execution evidence separately. For further language/interface architecture, consult the author's EsperanTek corpus.
+
+
+---
+
+## 2026-11-20 — Hiring-manager navigation and mandatory documentation-update contract (author-directed addendum)
+
+**Status:** APPROVED by the author as a durable documentation standard. This supplements, and does not erase, the 2026-11-09 current-first standard. **Scope:** Every future Baby Cloud documentation update, including assistant-assisted work.
+
+**Reader objective:** A hiring manager should be able to identify the project's actual deployed state, demonstrated skills, limits, and best evidence within approximately one minute of opening the README, then follow links to the complete dated engineering record. The repository remains an engineering record, not an inflated résumé.
+
+**Required information architecture:**
+1. `README.md`: short current-first landing page with last *documented* verification date, actual capabilities, unimplemented goals, and direct evidence links. Do not accumulate session logs in the README.
+2. `PROJECT_CONTINUITY.md`: concise current-state/next-action summary at the very top or linked from the top, with later dated handoffs preserved in their original order below. If an append-only historical file cannot be reordered safely, add a clearly marked current-state pointer at the beginning without deleting or modifying historical entries; otherwise append a dated update and keep the pointer current.
+3. Journal navigation: one discoverable newest-first master index linking entries in **both** `docs/journal/` and `journal/`. Index order is by session date descending, with short factual outcomes and evidence status. Keep the original dated journal contents in chronological order, including troubleshooting and failed attempts. Do not move or merge existing journals merely to unify navigation.
+4. Decision records, procurement, architecture, and diagrams: label historical versus current and PROPOSED versus VERIFIED; never present the conceptual eight-node topology as an as-built diagram. Preserve earlier wording and decisions; record superseding status through dated, attributable additions.
+5. Portfolio roadmap: link verified demonstrations and acceptance evidence; keep future acceptance criteria clearly separate from achieved results.
+
+**Mandatory update procedure (every approved substantive documentation change):**
+- **INSPECT:** Re-inventory and read the entire current tracked repository as required by the existing archival gate; inspect the target files and relevant links. If access is incomplete, stop and disclose it.
+- **IDENTIFY:** State the exact dated evidence, current versus historical assertions, affected files, and scope of the requested update. Do not infer a live hardware state from old documentation.
+- **ASCERTAIN:** Confirm authorization, protect historical text and sensitive data, and decide which *minimal* files require updates. Do not request approval repeatedly for changes already explicitly authorized.
+- **MODIFY:** Make small, reviewable, append-only changes to archival records and approved targeted edits to current-facing summaries and indexes. Never silently rewrite or delete historical observations.
+- **VERIFY:** Re-fetch changed files and check content, chronological/index order, relative links, consistent names, status claims, privacy, and actual Git commit results. Report exactly what changed, what was verified, and any limitations. A successful write is not proof of live infrastructure behavior.
+
+**Standing presentation rule:** Newest-first applies to current-state summaries and indexes; oldest-to-newest applies to events *within* individual dated engineering logs. Never conflate those two.
+
+**No implied operations:** This amendment documents presentation and change-control requirements; it does not claim new SSH, MPI, switch, backup, or physical topology tests.
