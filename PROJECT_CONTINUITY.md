@@ -1,5 +1,7 @@
 # Baby Cloud — Project Continuity
 
+> **CURRENT DOCUMENTATION POINTER — 2026-11-20:** For deployed status and limitations, see the [current README](README.md). For dated evidence in newest-first order, see the [unified engineering journal index](docs/journal/README.md). For the mandatory documentation update process, see the [2026-11-20 BC-DOC-001 amendment](docs/documentation-policy.md#2026-11-20--hiring-manager-navigation-and-mandatory-documentation-update-contract-author-directed-addendum). Older status sections below are preserved as historical handoffs, not a live-state assertion. Last documented physical-node SSH verification: **2026-11-08**; MPI remains unverified.
+
 **Established:** 2026-11-01
 **Purpose:** Durable operational handoff and next-action index for the Baby Cloud project. This is an additive index of the existing README, BC-DOC-001, architecture, decisions, procurement and dated journals. It does not replace or rewrite any historical record.
 
