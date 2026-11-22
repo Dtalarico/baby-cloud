@@ -182,3 +182,18 @@ For each unfamiliar Linux/network/cloud component, teach and record together: **
 **Standing presentation rule:** Newest-first applies to current-state summaries and indexes; oldest-to-newest applies to events *within* individual dated engineering logs. Never conflate those two.
 
 **No implied operations:** This amendment documents presentation and change-control requirements; it does not claim new SSH, MPI, switch, backup, or physical topology tests.
+
+
+---
+
+## 2026-11-22 — Operational reading scope and archival preservation standard
+
+**Status:** APPROVED by the author. This additive amendment resolves an operational continuity failure: requiring a full archival review before every simple engineering resumption made the preserved record itself a barrier to using the project.
+
+1. **Use deliberate reading modes.** Routine bounded operations require the current README, `docs/operational-start.md`, the directly relevant latest evidence, and the live observed state. A full archive is not required merely to reconnect by SSH, inspect one node, or perform another narrowly bounded authorized task.
+2. **Escalate proportionally.** Use broader targeted reading for consequential configuration, installation, storage, network, OS, architecture, or documentation changes. Use a full tracked-file archival review for explicitly archival work, substantial repository reorganization, conflict reconciliation, or an author-directed complete review.
+3. **Do not lose history.** The archive remains authoritative for its dated claims. A concise operational entry point is an index and scope boundary, not a replacement for decision records, journals, or prior evidence.
+4. **Make the next action executable.** The operational record must name the exact target, known current evidence, minimal prerequisite sources, decision boundary, and verification required. It must say when a narrow task must stop and escalate.
+5. **Do not overread by reflex.** Do not turn historical procurement, superseded planning, or unrelated node records into a prerequisite for a task whose evidence does not depend on them. Conversely, do not use the operational record to bypass relevant safety, authorization, or evidence requirements.
+
+**Verification boundary:** This policy amendment changes reading scope and workflow only. It claims no new live CASPER-01, BALTHAZAR-02, switch, SSH, MPI, or backup result.

@@ -83,3 +83,8 @@ Complete the first two-node MPI demonstration; expand through the MAGI node grou
 ## Historical preservation
 
 The [complete earlier README](README-HISTORY.md) is maintained intact as a historical snapshot. The dated journals, procurement records, decisions, and Git history remain in their original locations. Historical material should be easy to find without obstructing a reader seeking the newest verified status.
+
+
+## Routine operational start
+
+For a bounded operational task—such as reconnecting to one node by SSH—start with [Operational Start](docs/operational-start.md). It identifies the minimal relevant evidence and when a wider review is required; the complete historical archive remains preserved and linked throughout this repository.
