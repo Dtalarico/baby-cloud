@@ -1,6 +1,6 @@
 # Baby Cloud — Project Continuity
 
-> **CURRENT OPERATIONAL POINTER — 2026-11-22: For routine bounded work, start with [docs/operational-start.md](docs/operational-start.md). It defines the smallest evidence set for a task and when a broader or archival review is required.\n\nCURRENT DOCUMENTATION POINTER — 2026-11-20:** For deployed status and limitations, see the [current README](README.md). For dated evidence in newest-first order, see the [unified engineering journal index](docs/journal/README.md). For the mandatory documentation update process, see the [2026-11-20 BC-DOC-001 amendment](docs/documentation-policy.md#2026-11-20--hiring-manager-navigation-and-mandatory-documentation-update-contract-author-directed-addendum). Older status sections below are preserved as historical handoffs, not a live-state assertion. Last documented physical-node SSH verification: **2026-11-08**; MPI remains unverified.
+> **CURRENT OPERATIONAL POINTER — 2026-11-22: For routine bounded work, start with [docs/operational-start.md](docs/operational-start.md). It defines the smallest evidence set for a task and when a broader or archival review is required.\n\nCURRENT DOCUMENTATION POINTER — 2026-11-20:** For deployed status and limitations, see the [current README](README.md). For dated evidence in newest-first order, see the [unified engineering journal index](docs/journal/README.md). For the mandatory documentation update process, see the [2026-11-20 BC-DOC-001 amendment](docs/documentation-policy.md#2026-11-20--hiring-manager-navigation-and-mandatory-documentation-update-contract-author-directed-addendum). Older status sections below are preserved as historical handoffs, not a live-state assertion. Last documented physical-node SSH verification: **2026-11-22** (one-direction BALTHAZAR-02 to CASPER-01); MPI remains unverified.
 
 **Established:** 2026-11-01
 **Purpose:** Durable operational handoff and next-action index for the Baby Cloud project. This is an additive index of the existing README, BC-DOC-001, architecture, decisions, procurement and dated journals. It does not replace or rewrite any historical record.
@@ -207,3 +207,22 @@ The author reports that Node 2's **original, never-booted** Vilros microSD is in
 **Outstanding documentation opportunities, not yet authorized changes:** Put a concise current-state pointer at the top of this long continuity file; link the unified index prominently from the root README and legacy `journal/README.md`; make a verified as-built topology distinct from the existing conceptual eight-node SVG; label the old virtualized topology note as historical; review the placeholder `docs/services.md` and early `scripts/setu-rhel.sh` without claiming tested functionality. Preserve originals and verify any subsequent edits.
 
 **Mandatory future behavior:** Follow the 2026-11-20 BC-DOC-001 amendment for every substantive update; do not require the author to restate newest-first navigation, preservation of history, hiring-manager readability, or verification requirements.
+
+
+---
+
+## 2026-11-22 — Inter-node SSH system test
+
+**Objective:** Test live node-to-node SSH without changing configuration.
+
+**Starting state:** CASPER-01 and BALTHAZAR-02 had independently documented Windows-origin SSH access; MPI remained unimplemented.
+
+**Observed result:** The author authenticated from REAPER-ONE-PC to BALTHAZAR-02, then from BALTHAZAR-02 ran `ssh david-talarico@CASPER-01`. BALTHAZAR-02 displayed CASPER-01's first-contact ED25519 host-key prompt; the author accepted it. Authentication succeeded and the final interactive prompt was `david-talarico@CASPER-01:~ $`.
+
+**Verified boundary:** BALTHAZAR-02-to-CASPER-01 hostname resolution, network reachability, host-key handling, password authentication and interactive shell access are verified by author-supplied screenshot. This is not an MPI job, performance test, reverse-direction test, key-based-authentication test, or configuration change.
+
+**Evidence:** `docs/journal/2026-11-22-balthazar-to-casper-inter-node-ssh.md`.
+
+**Next exact task:** With separate authorization, design the minimum genuine two-node MPI test; do not install or configure MPI based on this connectivity result alone.
+
+**Provenance:** Author executed the test and supplied the screenshot; assistant drafted the documentation.

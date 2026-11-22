@@ -3,7 +3,7 @@
 **An expandable Raspberry Pi Beowulf-style parallel-computing cluster and Linux infrastructure engineering laboratory.**
 
 **Author:** David M. Talarico  
-**Current documented status:** November 9, 2026  
+**Current documented status:** November 22, 2026  
 **Deployed:** Two Raspberry Pi 4 (4 GB) nodes, remotely accessible by SSH  
 **Long-term goal:** Eight cooperating physical compute nodes
 
@@ -15,6 +15,7 @@
 |---|---|---|
 | Node 1: `CASPER-01` | Raspberry Pi OS; successful SSH from Windows by hostname and previously by IPv4 | **Verified Nov 8** |
 | Node 2: `BALTHAZAR-02` | Raspberry Pi OS; headless first boot and independent successful SSH login using final hostname | **Verified Nov 8** |
+| Inter-node SSH: `BALTHAZAR-02 → CASPER-01` | BALTHAZAR-02 resolved CASPER-01, accepted its ED25519 host key, authenticated `david-talarico`, and reached an interactive CASPER-01 shell | **Verified Nov 22** |
 | Network | Both nodes connected via a TP-Link TL-SG116E 16-port Gigabit switch to the existing AT&T gateway | **Documented** |
 | Troubleshooting | Diagnosed stale Avahi/mDNS advertising after Node 2 rename; successful reconnect by new name | **Verified Nov 8** |
 | True multi-node MPI computation | No coordinated parallel job yet completed or verified | **Not implemented** |
@@ -27,6 +28,7 @@ The above results come from the linked engineering records. No live-device verif
 - Commissioned two physical Raspberry Pis running Raspberry Pi OS.
 - Prepared Node 2 for first boot without a directly attached display or keyboard and authenticated remotely by SSH.
 - Accessed both nodes from Windows by their actual configured hostnames.
+- From BALTHAZAR-02, initiated an authenticated SSH session to CASPER-01 by configured hostname.
 - Investigated a hostname-resolution failure by distinguishing Linux hostname configuration, local host entries, Avahi/mDNS announcements, and SSH connectivity.
 - Recorded commands, observed output, corrections, and author-led versus assisted work in dated records.
 
@@ -44,7 +46,7 @@ The above results come from the linked engineering records. No live-device verif
 
 The founding objective is for multiple physical nodes to cooperate on **one computational workload** and combine results—not merely to share a network.
 
-**Next steps:** Confirm live inter-node communication, select a Message Passing Interface (MPI) implementation, choose consistent host and authentication conventions, then execute a minimal genuine two-node parallel job.
+**Next steps:** Select a Message Passing Interface (MPI) implementation, choose consistent host and authentication conventions, then execute a minimal genuine two-node parallel job. One-direction inter-node SSH from BALTHAZAR-02 to CASPER-01 is now verified; MPI remains unimplemented.
 
 **Pass criteria:** Evidence from both participating nodes, a verified combined result, a single-node baseline, two-node timings, an account of communication overhead, and reproducible commands/source. **MPI is not yet implemented or verified.**
 

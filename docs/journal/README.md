@@ -1,6 +1,6 @@
 # Baby Cloud — Engineering Journal Index
 
-**Updated:** 2026-11-20  
+**Updated:** 2026-11-22  
 **Purpose:** Newest-first navigation across both existing journal directories. Individual session journals remain chronological and are not rewritten or relocated. Dates below identify recorded sessions, not live retests.
 
 For current deployed status and limitations, start with the [project README](../../README.md). For the approved documentation-update standard, see [BC-DOC-001](../documentation-policy.md#2026-11-20--hiring-manager-navigation-and-mandatory-documentation-update-contract-author-directed-addendum).
@@ -9,6 +9,7 @@ For current deployed status and limitations, start with the [project README](../
 
 | Date | Journal | Recorded outcome / boundary |
 |---|---|---|
+| 2026-11-22 | [BALTHAZAR-02 to CASPER-01 inter-node SSH](2026-11-22-balthazar-to-casper-inter-node-ssh.md) | BALTHAZAR-02 resolved CASPER-01 and opened an authenticated interactive SSH shell; MPI and reverse direction unverified |
 | 2026-11-08 | [BALTHAZAR-02 headless commissioning](2026-11-08-balthasar-2-headless-preparation.md) | FAT32 repair and provisioning, successful headless SSH, hostname discovery/Avahi troubleshooting, final hostname SSH verified |
 | 2026-11-03 | [CASPER-01 reboot and hostname repair](2026-11-03-casper-reboot-and-hostname.md) | SSH reboot/reconnect and /etc/hosts correction verified |
 | 2026-11-02 | [First successful SSH login](2026-11-02-first-successful-ssh-login.md) | First authenticated remote administration and hostname change |

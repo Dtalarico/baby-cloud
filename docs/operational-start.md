@@ -27,7 +27,7 @@ A full archival review is **not** the default prerequisite for a routine bounded
 - Account: `david-talarico`
 - Last documented wired IPv4: `192.168.1.76`
 - Last documented SSH result: accessible from REAPER-ONE-PC by both the configured hostname and numeric IPv4
-- Last documented physical-node verification: 2026-11-08
+- Last documented physical-node verification: 2026-11-22 (BALTHAZAR-02-to-CASPER-01 inter-node SSH)
 - Network context: wired Ethernet through the TP-Link TL-SG116E switch to the existing AT&T gateway
 - Project boundary: MPI and multi-node computation are not implemented or verified
 
@@ -35,7 +35,8 @@ A full archival review is **not** the default prerequisite for a routine bounded
 
 1. This profile and the current README.
 2. `docs/journal/2026-11-03-casper-reboot-and-hostname.md` for the prior hostname/IP evidence.
-3. The current observed screen or command output.
+3. `docs/journal/2026-11-22-balthazar-to-casper-inter-node-ssh.md` when the task involves cross-node connectivity.
+4. The current observed screen or command output.
 
 Do not pull unrelated procurement, historical planning, or Node 2 commissioning records into a simple reconnect unless the evidence points there.
 
